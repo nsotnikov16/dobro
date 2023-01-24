@@ -1,0 +1,78 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url(../fonts/#{$file_name}.woff2) format("woff2"), url(../fonts/#{$file_name}.woff) format("woff");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+$main: #04394e;
+$gray: #f0f4f8;
+$black: #1e2326;
+$blue: #00adef;
+$linear-green: linear-gradient(121.12deg, #6ad474 -10.29%, #62ff71 105.05%),
+  linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
+$linear-blue: linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
+
+@import "fonts";
+
+@import "normalize";
+
+body {
+  font-family: "Acrom";
+}
+.page {
+  color: $main;
+  background-color: $gray;
+  overflow: hidden;
+
+
+  &_inner {
+    background-color: white;
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: 1170px;
+
+    @media (max-width: 1220px) {
+      padding: 0 30px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 15px;
+    }
+  }
+
+  &__title {
+    color: #6c3e2a;
+    line-height: 36px;
+    font-family: "__Circe Bold_5";
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+}
+
+/* Другое */
+@import "other";
+
+/* Контент */
+@import "content";
+
+/* Модалки */
+@import "popups";
+
+/* Спойлеры */
+@import "spoiler";
+
+/* Шапка */
+@import "header";
+
+/* Хлебные крошки */
+@import 'breadcrumbs';
+
+/* Подвал */
+@import "footer";

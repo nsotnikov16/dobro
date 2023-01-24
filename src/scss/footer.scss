@@ -1,0 +1,122 @@
+.footer {
+    border-radius: 60px 60px 0px 0px;
+    background-color: white;
+    padding-top: 95px;
+    &__top {
+        display: grid;
+        grid-template-columns: max-content max-content 1fr;
+        gap: 30px 50px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(12, 74, 98, 0.1);
+    }
+
+    &__logo {
+        background-image: url(../img/logo-footer.svg);
+        width: 220px;
+        height: 70px;
+    }
+
+    &__social {
+        gap: 20px;
+    }
+
+    &__nav {
+        margin-left: 18%;
+        grid-row: 1/3;
+        grid-column: 3/4;
+        max-width: 500px;
+        ul {
+            display: grid;
+            grid-template-columns: 1fr max-content;
+            gap: 15px;
+        }
+
+        li {
+        }
+
+        a {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        p {
+            color: $black;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 23px;
+        }
+    }
+
+    &__additionally {
+        grid-column: 1/3;
+        a {
+            font-size: 18px;
+            line-height: 22px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid $blue;
+        }
+
+        li {
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__copyright {
+        margin-top: 35px;
+    }
+
+    &__center {
+        padding: 29px 0;
+        border-bottom: 1px solid rgba(12, 74, 98, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > div {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    &__dev {
+        display: flex;
+        flex-direction: column;
+        span {
+            font-size: 16px;
+            line-height: 19px;
+            text-align: right;
+            margin-bottom: 8px;
+        }
+        img {
+            max-width: 266px;
+            opacity: 0.5;
+        }
+    }
+
+    &__bottom {
+        padding: 20px 0;
+        font-weight: 500;
+        font-size: 28.8px;
+        line-height: 22px;
+        text-align: center;
+        letter-spacing: -0.03em;
+        opacity: 0.2;
+    }
+}
+.page {
+    &__container {
+    }
+}
+.logo {
+}
+.social {
+}
+.viber {
+}
+.whatsapp {
+}
+.vk {
+}
