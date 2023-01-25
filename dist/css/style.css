@@ -806,6 +806,10 @@ body {
   grid-template-columns: repeat(3, 370px);
   gap: 15px 30px;
 }
+.popular__item {
+  background: rgba(240, 244, 248, 0.5);
+  border-radius: 33px;
+}
 .popular__item:first-child .popular__item-top {
   background: linear-gradient(121.12deg, #6ad474 -10.29%, #62ff71 105.05%), linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
 }
@@ -836,8 +840,6 @@ body {
   background-repeat: no-repeat;
 }
 .popular__item-bottom {
-  background: rgba(240, 244, 248, 0.5);
-  border-radius: 0 0 33px 33px;
   padding: 55px 30px 30px;
   margin-top: -30px;
   position: relative;
