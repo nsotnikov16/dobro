@@ -12,6 +12,7 @@ $main: #04394e;
 $gray: #f0f4f8;
 $black: #1e2326;
 $blue: #00adef;
+$green: #67DF73;
 $linear-green: linear-gradient(121.12deg, #6ad474 -10.29%, #62ff71 105.05%),
   linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
 $linear-blue: linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
@@ -27,7 +28,6 @@ body {
   color: $main;
   background-color: $gray;
   overflow: hidden;
-
 
   &_inner {
     background-color: white;
@@ -72,7 +72,10 @@ body {
 @import "header";
 
 /* Хлебные крошки */
-@import 'breadcrumbs';
+@import "breadcrumbs";
+
+/* Популярные услуги */
+@import "popular";
 
 /* Подвал */
 @import "footer";

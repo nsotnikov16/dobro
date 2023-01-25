@@ -58,8 +58,6 @@
         }
     }
 
-    &__social {
-    }
 
     &__bottom {
        
@@ -126,72 +124,6 @@
         }
     }
 
-    .btn {
-    }
-}
-.page {
-    &__container {
-    }
-}
-.logo {
-    display: block;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    flex-shrink: 0;
-}
-.triangle {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-image: url(../img/triangle.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-.social {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 35px);
-    gap: 5px;
-    min-width: 115px;
 
-    a {
-        border-radius: 50%;
-        height: 35px;
-        width: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        svg {
-            fill: white;
-            width: 18px;
-            height: 18px;
-        }
-    }
-
-    .viber {
-        background: #7f3cd3;
-        svg {
-            transform: translate(0, 1px);
-        }
-    }
-    .whatsapp {
-        background: #3cd382;
-    }
-    .vk {
-        background: #0077ff;
-    }
 }
 
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $linear-blue;
-    color: white;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: center;
-    padding: 16px 22px;
-    border-radius: 999px;
-}
