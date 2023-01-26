@@ -9,6 +9,21 @@
 
 		<!-- Популярные услуги -->
 		@@include('html/popular.html', {})
+
+		<!-- Врачи -->
+		@@include('html/doctors.html', {"color": "white"})
+
+		<!-- Остались сомнения? -->
+		@@include('html/ask.html', {"color": "white"})
+
+		<!-- Контактная информация -->
+		<section class="section">
+			<div class="page__container ">
+				@@include('html/contacts.html', {"class": "contacts_white"})
+			</div>
+		</section>
+
+
 		<!-- Подвал -->
 		@@include('html/footer.html', {})
 

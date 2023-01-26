@@ -1,0 +1,66 @@
+.ask {
+    position: relative;
+    h2 {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 38px;
+        letter-spacing: -0.05em;
+        color: $black;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    &__left {
+        background: $gray;
+        padding: 77px 70px;
+        max-width: 50.4%;
+        min-height: 350px;
+        z-index: 2;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &_white {
+            background: white;
+        }
+    }
+
+    &__right {
+        z-index: 1;
+        padding: 77px 76px 77px 139px;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0;
+        top: 18px;
+        width: 55.8%;
+        * {
+            color: white !important;
+        }
+        p {
+            max-width: 95%;
+        }
+    }
+
+    &__left,
+    &__right {
+        border-radius: 60px;
+    }
+
+    &__btn {
+        margin-top: 31px;
+        width: max-content;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        svg {
+            fill: white;
+            width: 20px;
+            height: 20px;
+            margin-left: 35px;
+        }
+    }
+}

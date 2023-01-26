@@ -1,6 +1,10 @@
 .footer {
     border-radius: 60px 60px 0px 0px;
     background-color: white;
+
+    &_gray {
+        background-color: $gray;
+    }
     padding-top: 95px;
     &__top {
         display: grid;

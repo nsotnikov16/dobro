@@ -12,7 +12,7 @@ $main: #04394e;
 $gray: #f0f4f8;
 $black: #1e2326;
 $blue: #00adef;
-$green: #67DF73;
+$green: #67df73;
 $linear-green: linear-gradient(121.12deg, #6ad474 -10.29%, #62ff71 105.05%),
   linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
 $linear-blue: linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
@@ -36,6 +36,16 @@ body {
   &__container {
     margin: 0 auto;
     max-width: 1170px;
+
+    &_right {
+      margin-right: 0;
+      max-width: 1545px;
+    }
+
+    &_left {
+      margin-left: 0;
+      max-width: 1545px;
+    }
 
     @media (max-width: 1220px) {
       padding: 0 30px;
@@ -76,6 +86,15 @@ body {
 
 /* Популярные услуги */
 @import "popular";
+
+/* Врачи */
+@import "doctors";
+
+/* Остались сомнения? */
+@import "ask";
+
+/* Контактная информация */
+@import "contacts";
 
 /* Подвал */
 @import "footer";

@@ -1,0 +1,71 @@
+.contacts {
+    display: flex;
+    align-items: center;
+    background-color: $gray;
+    padding: 37px 0;
+    border-radius: 60px 0 0 60px;
+    overflow: hidden;
+    width: 100vw;
+    max-width: 1545px;
+
+    @media (min-width: 1921px) {
+        border-radius: 60px;
+    }
+    &_reverse {
+        flex-direction: row-reverse;
+    }
+    &_white {
+        background-color: white;
+    }
+    &__info {
+        max-width: 470px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 74px;
+    }
+
+    &__block {
+        margin-bottom: 20px;
+
+        h3 {
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 32px;
+            color: $black;
+            margin-bottom: 10px;
+        }
+
+        p,
+        a {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        a {
+            display: block;
+        }
+    }
+
+    &__map {
+        position: relative;
+        border-radius: 0px 33px 33px 0px;
+        width: 100%;
+        overflow: hidden;
+        iframe {
+            border-radius: 33px 0 0 33px;
+            height: 626px !important;
+        }
+    }
+
+    &__pass {
+        display: none;
+    }
+
+    .section__title {
+        margin-bottom: 30px;
+    }
+}

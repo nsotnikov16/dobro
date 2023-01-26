@@ -396,6 +396,14 @@ body {
   margin: 0 auto;
   max-width: 1170px;
 }
+.page__container_right {
+  margin-right: 0;
+  max-width: 1545px;
+}
+.page__container_left {
+  margin-left: 0;
+  max-width: 1545px;
+}
 @media (max-width: 1220px) {
   .page__container {
     padding: 0 30px;
@@ -425,7 +433,25 @@ body {
   line-height: 50px;
   letter-spacing: -0.05em;
   color: #1e2326;
+}
+.section__title:not(.section__head .section__title) {
   margin-bottom: 40px;
+}
+.section__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.section__head > * {
+  flex-basis: 48%;
+}
+.section__subtitle {
+  max-width: 564px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1e2326;
 }
 .section_white {
   background-color: #ffffff;
@@ -859,10 +885,206 @@ body {
   border-bottom: 1px solid #00adef;
 }
 .popular__item-bottom a:hover {
-  color: #67DF73;
+  color: #67df73;
 }
 .popular__all {
   margin-top: 30px;
+}
+
+/* Врачи */
+.doctors_white .doctor {
+  background-color: white;
+}
+.doctors .swiper-slide {
+  height: auto;
+}
+.doctors .swiper-scrollbar {
+  position: static;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.doctors .swiper-scrollbar-drag {
+  background-color: #00adef;
+}
+
+.doctor {
+  border-radius: 32px;
+  overflow: hidden;
+  background: #f0f4f8;
+  height: 100%;
+}
+.doctor__photo {
+  height: 380px;
+  width: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.doctor__info {
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 380px);
+}
+.doctor__info-top {
+  padding-left: 20px;
+}
+.doctor__experience {
+  margin-bottom: 14px;
+  background: linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
+  border-radius: 0px 15px 15px 0px;
+  width: max-content;
+  padding: 5px 14px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: white;
+  transform: translateX(-40px);
+}
+.doctor__name {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #1e2326;
+  margin-bottom: 12px;
+  display: block;
+}
+.doctor__spec {
+  font-size: 16px;
+  line-height: 24px;
+}
+.doctor__btn {
+  margin-top: 32px;
+  width: 100%;
+}
+
+/* Остались сомнения? */
+.ask {
+  position: relative;
+}
+.ask h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 38px;
+  letter-spacing: -0.05em;
+  color: #1e2326;
+  margin-bottom: 10px;
+}
+.ask p {
+  font-size: 18px;
+  line-height: 24px;
+}
+.ask__left {
+  background: #f0f4f8;
+  padding: 77px 70px;
+  max-width: 50.4%;
+  min-height: 350px;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ask__left_white {
+  background: white;
+}
+.ask__right {
+  z-index: 1;
+  padding: 77px 76px 77px 139px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 18px;
+  width: 55.8%;
+}
+.ask__right * {
+  color: white !important;
+}
+.ask__right p {
+  max-width: 95%;
+}
+.ask__left, .ask__right {
+  border-radius: 60px;
+}
+.ask__btn {
+  margin-top: 31px;
+  width: max-content;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+.ask__btn svg {
+  fill: white;
+  width: 20px;
+  height: 20px;
+  margin-left: 35px;
+}
+
+/* Контактная информация */
+.contacts {
+  display: flex;
+  align-items: center;
+  background-color: #f0f4f8;
+  padding: 37px 0;
+  border-radius: 60px 0 0 60px;
+  overflow: hidden;
+  width: 100vw;
+  max-width: 1545px;
+}
+@media (min-width: 1921px) {
+  .contacts {
+    border-radius: 60px;
+  }
+}
+.contacts_reverse {
+  flex-direction: row-reverse;
+}
+.contacts_white {
+  background-color: white;
+}
+.contacts__info {
+  max-width: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 74px;
+}
+.contacts__block {
+  margin-bottom: 20px;
+}
+.contacts__block h3 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 32px;
+  color: #1e2326;
+  margin-bottom: 10px;
+}
+.contacts__block p,
+.contacts__block a {
+  font-size: 18px;
+  line-height: 24px;
+}
+.contacts__block:last-child {
+  margin-bottom: 0;
+}
+.contacts__block a {
+  display: block;
+}
+.contacts__map {
+  position: relative;
+  border-radius: 0px 33px 33px 0px;
+  width: 100%;
+  overflow: hidden;
+}
+.contacts__map iframe {
+  border-radius: 33px 0 0 33px;
+  height: 626px !important;
+}
+.contacts__pass {
+  display: none;
+}
+.contacts .section__title {
+  margin-bottom: 30px;
 }
 
 /* Подвал */
@@ -870,6 +1092,9 @@ body {
   border-radius: 60px 60px 0px 0px;
   background-color: white;
   padding-top: 95px;
+}
+.footer_gray {
+  background-color: #f0f4f8;
 }
 .footer__top {
   display: grid;

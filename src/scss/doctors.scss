@@ -1,0 +1,79 @@
+.doctors {
+    &_white {
+        .doctor {
+            background-color: white;
+        }
+    }
+
+    .swiper-slide {
+        height: auto;
+    }
+
+    .swiper-scrollbar {
+        position: static;
+        margin-top: 40px;
+        cursor: pointer;
+
+        &-drag {
+            background-color: $blue;
+        }
+    }
+}
+
+.doctor {
+    border-radius: 32px;
+    overflow: hidden;
+    background: $gray;
+
+    height: 100%;
+    &__photo {
+        height: 380px;
+        width: 100%;
+        object-fit: contain;
+        object-position: center bottom;
+    }
+
+    &__info {
+        padding: 22px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100% - 380px);
+    }
+
+    &__info-top {
+        padding-left: 20px;
+    }
+
+    &__experience {
+        margin-bottom: 14px;
+        background: $linear-blue;
+        border-radius: 0px 15px 15px 0px;
+        width: max-content;
+        padding: 5px 14px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        color: white;
+        transform: translateX(-40px);
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        color: $black;
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    &__spec {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__btn {
+        margin-top: 32px;
+        width: 100%;
+    }
+}
