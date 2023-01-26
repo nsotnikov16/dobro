@@ -4,24 +4,33 @@
 	<div class="page">
 		<!-- Шапка -->
 		@@include('html/header.html', {})
-
 		<!-- @@include('html/breadcrumbs.html', {}) -->
+		<main>
+			<!-- Баннеры -->
+			@@include('html/banners.html', {})
 
-		<!-- Популярные услуги -->
-		@@include('html/popular.html', {})
+			<!-- Популярные услуги -->
+			@@include('html/popular.html', {})
 
-		<!-- Врачи -->
-		@@include('html/doctors.html', {"color": "white"})
+			<!-- Преимущества -->
+			@@include('html/advantages.html', {})
 
-		<!-- Остались сомнения? -->
-		@@include('html/ask.html', {"color": "white"})
+			<!-- Врачи -->
+			@@include('html/doctors.html', {"color": "white"})
 
-		<!-- Контактная информация -->
-		<section class="section">
-			<div class="page__container ">
-				@@include('html/contacts.html', {"class": "contacts_white"})
-			</div>
-		</section>
+			<!-- Остались сомнения? -->
+			@@include('html/ask.html', {"color": "white"})
+
+			<!-- Контактная информация -->
+			<section class="section">
+				<div class="page__container">
+					@@include('html/contacts.html', {"class": "contacts_white"})
+				</div>
+			</section>
+
+
+		</main>
+
 
 
 		<!-- Подвал -->

@@ -23,6 +23,18 @@ $linear-blue: linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
 
 body {
   font-family: "Acrom";
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  scrollbar-width: none;
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: white;
+  }
 }
 .page {
   color: $main;
@@ -40,11 +52,15 @@ body {
     &_right {
       margin-right: 0;
       max-width: 1545px;
+    
     }
 
     &_left {
       margin-left: 0;
       max-width: 1545px;
+      @media(min-width: 1921px) {
+        margin-left: auto;
+      }
     }
 
     @media (max-width: 1220px) {
@@ -83,6 +99,12 @@ body {
 
 /* Хлебные крошки */
 @import "breadcrumbs";
+
+/* Баннеры */
+@import "banners";
+
+/* Преимущества */
+@import "advantages";
 
 /* Популярные услуги */
 @import "popular";

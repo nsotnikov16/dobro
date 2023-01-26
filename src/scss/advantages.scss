@@ -1,0 +1,53 @@
+.advantages {
+    display: flex;
+    align-items: center;
+    padding: 40px 46px 40px 0;
+    background-color: white;
+    border-radius: 0px 60px 60px 0px;
+    max-width: 1545px;
+    overflow: hidden;
+
+    @media(min-width: 1921px) {
+        border-radius: 60px;
+    }
+
+    .section__title {
+        color: $blue;
+        margin-bottom: 20px !important;
+    }
+
+    .swiper-slide {
+        height: auto;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .swiper-pagination {
+        bottom: 30px;
+
+        &-bullet {
+            background: linear-gradient(0deg, #04394e, #04394e), linear-gradient(0deg, #c0cdd1, #c0cdd1);
+            opacity: 1;
+        }
+
+        &-bullet-active {
+            width: 30px;
+            height: 9px;
+            background: $blue;
+            border-radius: 10px;
+        }
+    }
+
+    &__swiper {
+        border-radius: 0px 33px 33px 0px;
+    }
+
+    &__info {
+        margin-left: 54px;
+        width: 37%;
+        flex-shrink: 0;
+    }
+}

@@ -48,24 +48,64 @@
         a {
             display: block;
         }
+
+        .btn {
+            width: 100%;
+        }
     }
 
     &__map {
         position: relative;
-        border-radius: 0px 33px 33px 0px;
+        border-radius: 33px 0 0 33px;
         width: 100%;
         overflow: hidden;
         iframe {
-            border-radius: 33px 0 0 33px;
+            
             height: 626px !important;
         }
     }
 
     &__pass {
-        display: none;
+        position: absolute;
+        overflow: hidden;
+        padding-left: 25px;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url(../img/pass.png);
+        background-repeat: no-repeat;
+        width: 183px;
+        height: 172px;
+        &::before {
+            content: "";
+            display: block;
+            width: 39px;
+            height: 41px;
+            background-size: contain;
+            background-image: url(../img/chelovek.svg);
+            margin-bottom: 6px;
+        }
+
+        svg {
+            fill: white;
+            width: 18px;
+            height: 17px;
+        }
+        color: white;
+        font-size: 20px;
+        line-height: 20px;
+        span {
+            max-width: 120px;
+        }
     }
 
     .section__title {
         margin-bottom: 30px;
+    }
+
+    &__btn {
+        margin-top: 26px;;
     }
 }
