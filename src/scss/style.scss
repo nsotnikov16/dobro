@@ -2,7 +2,8 @@
   @font-face {
     font-family: $font_name;
     font-display: swap;
-    src: url(../fonts/#{$file_name}.woff2) format("woff2"), url(../fonts/#{$file_name}.woff) format("woff");
+    src: url(../fonts/#{$file_name}.woff2) format("woff2"),
+      url(../fonts/#{$file_name}.woff) format("woff");
     font-weight: #{$weight};
     font-style: #{$style};
   }
@@ -55,13 +56,12 @@ body {
     &_right {
       margin-right: 0;
       max-width: 1545px;
-    
     }
 
     &_left {
       margin-left: 0;
       max-width: 1545px;
-      @media(min-width: 1921px) {
+      @media (min-width: 1921px) {
         margin-left: auto;
       }
     }
@@ -122,7 +122,19 @@ body {
 @import "contacts";
 
 /* О клинике */
-@import 'clinic';
+@import "clinic";
+
+/* Лицензии и сертификаты */
+@import "licenses";
+
+/* Как к нам пройти */
+@import "passage";
+
+/* Стоматолог */
+@import "dentist";
+
+/* Образование */
+@import "education";
 
 /* Подвал */
 @import "footer";

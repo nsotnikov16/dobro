@@ -1,0 +1,70 @@
+.education {
+  .swiper-scrollbar {
+    position: static;
+    margin-top: 40px;
+    cursor: pointer;
+
+    &-drag {
+      background-color: $blue;
+    }
+  }
+
+  &__item {
+    padding: 24px;
+    background: $gray;
+    border-radius: 33px;
+    position: relative;
+  }
+
+  &__item-top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__year {
+    border: 1px solid #00adef;
+    border-radius: 45px;
+    padding: 5px 15px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+    color: $black;
+    margin-right: 10px;
+    width: max-content;
+  }
+
+  &__show {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: underline;
+  }
+
+  &__photo {
+    width: 50px;
+    height: 100px;
+    object-fit: contain;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    border-radius: 8px 0 0 8px;
+  }
+
+  &__item-bottom {
+    margin-top: 10px;
+    max-width: 270px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

@@ -1,17 +1,23 @@
-@@include('html/head.html', {"title": "О клинике"})
+@@include('html/head.html', {"title": "Галкина Екатерина Александровна"})
 
 <body>
     <div class="page page_inner">
         <!-- Шапка -->
         @@include('html/header.html', {})
-        @@include('html/breadcrumbs.html', {"current": "О клинике"})
+        @@include('html/breadcrumbs.html', {"current": "Галкина Е.А.", "prev": "<li><a href='./doctors.html'>Врачи</a></li>"})
         <main>
-            <!-- О клинике -->
-            @@include('html/clinic.html', {})
+
+            <!-- Врач -->
+            @@include('html/dentist.html', {})
+
+            <!-- Образование -->
+            @@include('html/education.html', {})
 
             <!-- Лицензии и сертификаты -->
             @@include('html/licenses.html', {})
 
+            <!-- Врачи -->
+			@@include('html/doctors.html', {"color": "gray"})
 
             <!-- Остались сомнения? -->
             @@include('html/ask.html', {"color": "gray"})

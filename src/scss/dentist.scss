@@ -1,0 +1,39 @@
+.dentist {
+  max-width: 1360px;
+  background: linear-gradient(0deg, #f0f4f8, #f0f4f8), #ffffff;
+  border-radius: 32px;
+  margin: 0 auto 65px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__info {
+    max-width: 402px;
+  }
+
+  &__photo {
+    transform: scaleX(-1);
+    width: 485px;
+    
+  }
+
+  &__spec {
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &__experience {
+    margin-bottom: 20px;
+    border-radius: 15px;
+    transform: initial;
+  }
+}

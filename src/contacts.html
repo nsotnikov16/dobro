@@ -1,0 +1,31 @@
+@@include('html/head.html', {"title": "Контакты"})
+
+<body>
+    <div class="page page_inner">
+        <!-- Шапка -->
+        @@include('html/header.html', {})
+        @@include('html/breadcrumbs.html', {"current": "Контакты", "prev": ""})
+        <main>
+
+            <section class="section">
+                <div class="page__container">
+                    <h1 class="section__title">Контакты</h1>
+                    @@include('html/contacts.html', {"class": "contacts_white contacts_reverse"})
+                </div>
+            </section>
+
+            @@include('html/passage.html', {})
+
+        </main>
+        <!-- Подвал -->
+        @@include('html/footer.html', {})
+
+    </div>
+
+    <!-- Модалки -->
+    @@include('html/popups.html', {})
+
+    @@include('html/scripts.html', {})
+</body>
+
+</html>

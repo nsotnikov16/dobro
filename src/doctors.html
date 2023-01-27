@@ -1,17 +1,14 @@
-@@include('html/head.html', {"title": "О клинике"})
+@@include('html/head.html', {"title": "Врачи"})
 
 <body>
     <div class="page page_inner">
         <!-- Шапка -->
         @@include('html/header.html', {})
-        @@include('html/breadcrumbs.html', {"current": "О клинике"})
+        @@include('html/breadcrumbs.html', {"current": "Врачи", "prev": ""})
         <main>
-            <!-- О клинике -->
-            @@include('html/clinic.html', {})
 
-            <!-- Лицензии и сертификаты -->
-            @@include('html/licenses.html', {})
-
+            <!-- Врачи -->
+            @@include('html/doctors.html', {"color": "gray"})
 
             <!-- Остались сомнения? -->
             @@include('html/ask.html', {"color": "gray"})

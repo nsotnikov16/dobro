@@ -154,3 +154,26 @@
     background-color: #512da8; /* цвет заднего фона при наведении */
   }
 }
+
+.magnifier {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  background-image: url(../img/lupa.svg);
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.icon-download {
+  background-image: url(../img/download.svg);
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  display: block;
+  transform: translateY(3px);
+  flex-shrink: 0;
+}

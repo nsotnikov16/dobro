@@ -1,0 +1,50 @@
+.licenses {
+  &__swiper {
+
+    .swiper-scrollbar {
+        position: static;
+        margin-top: 55px;
+        cursor: pointer;
+        &-drag {
+            background: $blue;
+        }
+    }
+  }
+}
+
+.licence {
+  display: flex;
+  flex-direction: column;
+  width: 370px;
+  padding: 25px;
+  background: linear-gradient(
+      0deg,
+      rgba(240, 244, 248, 0.5),
+      rgba(240, 244, 248, 0.5)
+    ),
+    #ffffff;
+  border-radius: 33px;
+  &__img {
+    position: relative;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 460px;
+      object-fit: contain;
+    }
+  }
+
+  &__download {
+    display: flex;
+    margin-top: 23px;
+    justify-content: space-between;
+  }
+
+  &__name {
+    margin-right: 15px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: $black;
+  }
+}

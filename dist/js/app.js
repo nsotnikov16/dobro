@@ -100,6 +100,28 @@ if (banners.length) {
     })
 }
 
+const swiperLicenses = new Swiper('.licenses__swiper', {
+    // Default parameters
+    slidesPerView: 3,
+    spaceBetween: 30,
+
+    scrollbar: {
+        el: '.licenses__swiper .swiper-scrollbar',
+        draggable: true,
+    },
+})
+
+
+const swiperEducation = new Swiper('.education.swiper', {
+    // Default parameters
+    slidesPerView: 3,
+    spaceBetween: 30,
+    scrollbar: {
+        el: '.education.swiper .swiper-scrollbar',
+        draggable: true,
+    },
+})
+
 
 function setSameHeight(selector, elementsNode) {
     let column = 0
@@ -120,7 +142,7 @@ const btnUp = {
         this.el.classList.add('btn-up_hide');
     },
     addEventListener() {
-        if(!this.el) return
+        if (!this.el) return
         // при прокрутке содержимого страницы
         window.addEventListener('scroll', () => {
             // определяем величину прокрутки
@@ -141,3 +163,5 @@ const btnUp = {
 }
 
 btnUp.addEventListener();
+
+setSameHeight('.passage__info h3')
