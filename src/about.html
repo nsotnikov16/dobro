@@ -1,0 +1,26 @@
+@@include('html/head.html', {"title": "О клинике"})
+
+<body>
+    <div class="page page_inner">
+        <!-- Шапка -->
+        @@include('html/header.html', {})
+        @@include('html/breadcrumbs.html', {"current": "О клинике"})
+        <main>
+
+            @@include('html/clinic.html', {})
+            <!-- Остались сомнения? -->
+            @@include('html/ask.html', {"color": "gray"})
+
+        </main>
+        <!-- Подвал -->
+        @@include('html/footer.html', {})
+
+    </div>
+
+    <!-- Модалки -->
+    @@include('html/popups.html', {})
+
+    @@include('html/scripts.html', {})
+</body>
+
+</html>

@@ -24,11 +24,11 @@ $linear-blue: linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
 body {
   font-family: "Acrom";
   &::-webkit-scrollbar {
-    width: 0;
+    width: 5px;
   }
-  scrollbar-width: none;
+  scrollbar-width: 5px;
   &::-webkit-scrollbar-thumb {
-    background-color: $gray;
+    background-color: gray;
     border-radius: 20px;
   }
 
@@ -43,6 +43,9 @@ body {
 
   &_inner {
     background-color: white;
+    .footer {
+      background-color: $gray;
+    }
   }
 
   &__container {
@@ -117,6 +120,9 @@ body {
 
 /* Контактная информация */
 @import "contacts";
+
+/* О клинике */
+@import 'clinic';
 
 /* Подвал */
 @import "footer";

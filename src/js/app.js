@@ -86,7 +86,7 @@ if (banners.length) {
     banners.forEach((banner, index) => {
         const blockForSwiper = banner.querySelector('.banner__swiper')
         if (!blockForSwiper) return
-         new Swiper(blockForSwiper, {
+        new Swiper(blockForSwiper, {
             slidesPerView: 1,
             autoHeight: true,
             loop: true,
@@ -108,3 +108,36 @@ function setSameHeight(selector, elementsNode) {
     elements.forEach(el => el.offsetHeight > column ? column = el.offsetHeight : '')
     elements.forEach(el => el.style.height = column + 'px')
 }
+
+const btnUp = {
+    el: document.querySelector('.btn-up'),
+    show() {
+        // удалим у кнопки класс btn-up_hide
+        this.el.classList.remove('btn-up_hide');
+    },
+    hide() {
+        // добавим к кнопке класс btn-up_hide
+        this.el.classList.add('btn-up_hide');
+    },
+    addEventListener() {
+        if(!this.el) return
+        // при прокрутке содержимого страницы
+        window.addEventListener('scroll', () => {
+            // определяем величину прокрутки
+            const scrollY = window.scrollY || document.documentElement.scrollTop;
+            // если страница прокручена больше чем на 400px, то делаем кнопку видимой, иначе скрываем
+            scrollY > 400 ? this.show() : this.hide();
+        });
+        // при нажатии на кнопку .btn-up
+        document.querySelector('.btn-up').onclick = () => {
+            // переместим в начало страницы
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+}
+
+btnUp.addEventListener();

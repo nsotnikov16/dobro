@@ -1,129 +1,139 @@
 .header {
-    &__top {
-        .page__container {
-            padding-top: 30px;
-            padding-bottom: 26px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+  &__top {
+    .page__container {
+      padding-top: 30px;
+      padding-bottom: 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    border-radius: 0px 0px 60px 60px;
+    background-color: white;
+  }
+
+  &__logo {
+    background-image: url(../img/logo-header.svg);
+    width: 258px;
+    height: 50px;
+  }
+
+  &__block {
+    display: flex;
+    svg {
+      flex-shrink: 0;
+      fill: $blue;
+      width: 18px;
+      height: 18px;
+    }
+
+    p {
+      margin-left: 5px;
+      color: $black;
+      font-weight: 500;
+      font-size: 20px;
+      text-align: right;
+      line-height: 18px;
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 17px;
+      color: $main;
+      padding-bottom: 2px;
+      border-bottom: 1px solid $blue;
+      cursor: pointer;
+    }
+
+    &_address {
+    }
+
+    &_phone {
+      position: relative;
+      cursor: pointer;
+      .triangle {
+        right: -15px;
+        top: 2px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__bottom {
+    border-bottom: 1px solid rgba(12, 74, 98, 0.1);
+  }
+
+  &__nav {
+    padding: 12px 0;
+    > ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: $main;
+      }
+
+      > li {
+        margin-right: 40px;
+        &:last-child {
+          margin-right: 0;
         }
-        border-radius: 0px 0px 60px 60px;
-        background-color: white;
+      }
     }
-
-    &__logo {
-        background-image: url(../img/logo-header.svg);
-        width: 258px;
-        height: 50px;
-    }
-
-    &__block {
+    .link-dropdown {
+      > a {
         display: flex;
-        svg {
-            flex-shrink: 0;
-            fill: $blue;
-            width: 18px;
-            height: 18px;
+        align-items: center;
+        &::after {
+          content: "";
+          background-image: url(../img/triangle.svg);
+          opacity: 0.65;
+          width: 10px;
+          height: 10px;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          display: block;
+          margin-left: 4px;
+          flex-shrink: 0;
         }
-
-        p {
-            margin-left: 5px;
-            color: $black;
-            font-weight: 500;
-            font-size: 20px;
-            text-align: right;
-            line-height: 18px;
-        }
-
-        span {
-            font-size: 14px;
-            line-height: 17px;
-            color: $main;
-            padding-bottom: 2px;
-            border-bottom: 1px solid $blue;
-            cursor: pointer;
-        }
-
-        &_address {
-        }
-
-        &_phone {
-            position: relative;
-            cursor: pointer;
-            .triangle {
-                right: -15px;
-                top: 2px;
-                cursor: pointer;
-            }
-        }
+      }
+      div {
+        display: none;
+      }
     }
 
-
-    &__bottom {
-       
-        border-bottom: 1px solid rgba(12, 74, 98, 0.1);
+    .link-reviews {
+      span {
+        margin-left: 2px;
+        border-radius: 9999px;
+        padding: 2px 4px;
+        background-color: $blue;
+        font-size: 11px;
+        line-height: 12px;
+        color: white;
+      }
     }
 
-    &__nav {
-        padding: 12px 0;
-        > ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            a {
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 19px;
-                color: $main;
-            }
-
-            > li {
-                margin-right: 40px;
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-        }
-        .link-dropdown {
-            > a {
-                display: flex;
-                align-items: center;
-                &::after {
-                    content: "";
-                    background-image: url(../img/triangle.svg);
-                    opacity: 0.65;
-                    width: 10px;
-                    height: 10px;
-                    background-repeat: no-repeat;
-                    background-size: 100%;
-                    display: block;
-                    margin-left: 4px;
-                    flex-shrink: 0;
-                }
-            }
-            div {
-                display: none;
-            }
-        }
-
-        .link-reviews {
-            span {
-                margin-left: 2px;
-                border-radius: 9999px;
-                padding: 2px 4px;
-                background-color: $blue;
-                font-size: 11px;
-                line-height: 12px;
-                color: white;
-            }
-        }
-
-        .selected {
-            color: $blue;
-        }
+    .link-stocks {
+      position: relative;
+      &::after {
+        content: "%";
+        font-weight: 800;
+        font-size: 58px;
+        line-height: 70px;
+        color: $main;
+        opacity: 0.1;
+        position: absolute;
+        top: -125%;
+        left: 0;
+      }
     }
 
-
+    .selected {
+      color: $blue;
+    }
+  }
 }
-
