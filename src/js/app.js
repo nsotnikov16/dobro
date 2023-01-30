@@ -165,3 +165,177 @@ const btnUp = {
 btnUp.addEventListener();
 
 setSameHeight('.passage__info h3')
+
+
+// Popups
+class Popup {
+    constructor(popupElement) {
+        this.popupElement = popupElement;
+        this._closeButton = this.popupElement.querySelector('.popup__close');
+        this._img = this.popupElement.querySelector('.popup__img') ?? ''
+        this._handleEscClose = this._handleEscClose.bind(this)
+        this._openingLinks = document.querySelectorAll(`[data-pointer="${this.popupElement.id}"]`)
+        this.form = this.popupElement.querySelector('form')
+        this.setEventListeners()
+    }
+
+    open(el) {
+        document.body.style.overflow = "hidden";
+        this.popupElement.classList.add('popup_opened')
+        document.addEventListener('keydown', this._handleEscClose);
+        if (this._img && el.src) this._img.src = el.src
+
+    }
+
+    close() {
+        this.popupElement.classList.remove('popup_opened');
+        document.body.style.overflow = "visible";
+        document.removeEventListener('keydown', this._handleEscClose);
+        if (this.form && this.form.classList.contains('form_success')) {
+            setTimeout(() => {this.form.classList.remove('form_success')}, 300)
+        }
+    }
+
+    _handleEscClose(evt) {
+        if (evt.keyCode === 27) {
+            this.close();
+        }
+    }
+
+    _handleOverlayClick(evt) {
+        if (evt.target === evt.currentTarget) {
+            this.close();
+        }
+    }
+
+    setEventListeners() {
+        this._openingLinks.forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); this.open(e.target) }))
+        this._closeButton.addEventListener('click', () => this.close());
+        this.popupElement.addEventListener('click', this._handleOverlayClick.bind(this));
+    }
+}
+
+const popups = document.querySelectorAll('.popup')
+let arrPopups = {}
+document.addEventListener('DOMContentLoaded', () => {
+    if (popups.length > 0) popups.forEach(item => {
+        const popup = new Popup(item)
+        arrPopups[item.id] = popup
+    })
+})
+
+/* Маска */
+window.addEventListener("DOMContentLoaded", function () {
+    [].forEach.call(document.querySelectorAll('.tel'), function (input) {
+        var keyCode;
+        function mask(event) {
+            event.keyCode && (keyCode = event.keyCode);
+            var pos = this.selectionStart;
+            if (pos < 3) event.preventDefault();
+            var matrix = "+7 (___) ___-__-__",
+                i = 0,
+                def = matrix.replace(/\D/g, ""),
+                val = this.value.replace(/\D/g, ""),
+                new_value = matrix.replace(/[_\d]/g, function (a) {
+                    return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+                });
+            i = new_value.indexOf("_");
+            if (i != -1) {
+                i < 5 && (i = 3);
+                new_value = new_value.slice(0, i)
+            }
+            var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+                function (a) {
+                    return "\\d{1," + a.length + "}"
+                }).replace(/[+()]/g, "\\$&");
+            reg = new RegExp("^" + reg + "$");
+            if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+            if (event.type == "blur" && this.value.length < 5) this.value = ""
+        }
+        input.addEventListener("input", mask, false);
+        input.addEventListener("focus", mask, false);
+        input.addEventListener("blur", mask, false);
+        input.addEventListener("keydown", mask, false)
+    });
+});
+
+const inputs = document.querySelectorAll('input')
+if (inputs.length) {
+    inputs.forEach(input => {
+        const placeholder = input.nextElementSibling
+        if (!placeholder || !placeholder.classList.contains('form__placeholder')) return
+        input.addEventListener('focusout', () => {
+            placeholder.style.display = 'block'
+            if (input.value) placeholder.style.display = 'none'
+        })
+
+        input.addEventListener('focus', () => {
+            placeholder.style.display = 'none'
+        })
+    })
+}
+
+function isValidInputs(inputs) {
+    if (!inputs || !inputs.length) return false
+    return inputs.every(input => {
+
+        let valid = input.validity.valid
+        if (input.classList.contains('tel')) {
+            valid = input.value.length >= input.minLength
+        }
+
+        if (!valid) {
+            input.classList.add('invalid')
+        } else {
+            input.classList.remove('invalid')
+        }
+
+        return valid
+    })
+}
+
+const forms = document.querySelectorAll('form')
+if (forms.length) {
+    forms.forEach(form => {
+        const button = form.querySelector('button[type="submit"]')
+        const placeholders = form.querySelectorAll('.form__placeholder')
+        let elements = form.querySelectorAll('input:not([type=hidden]), textarea')
+
+        elements = Array.from(elements)
+
+        if (elements.length) elements.forEach(el => el.addEventListener('input', () => isValidInputs([el])))
+
+        if (button) button.dataset.text = button.textContent
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const valid = isValidInputs(elements)
+            if (!valid) return
+            const action = form.action
+            if (!action) return
+            if (button) {
+                button.textContent = 'Отправляем...'
+            }
+
+            fetch(action, {
+                method: form.method || form.dataset.method
+            })
+                .then(response => {
+                    if (response.ok) return response.text()
+                    return Promise.reject()
+                })
+                .then(res => {
+                    if (!res) return Promise.reject()
+                    if (res) {
+                        form.classList.add('form_success')
+                        form.reset()
+                        if (placeholders.length) placeholders.forEach(p => p.style.display = 'block')
+                    }
+
+                })
+                .catch(err => form.classList.add('form_error'))
+                .finally(() => {
+                    if (button) button.textContent = button.dataset.text
+                })
+        })
+    })
+}

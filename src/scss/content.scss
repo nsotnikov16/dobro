@@ -10,4 +10,28 @@
         font-size: 18px;
         line-height: 24px;
     }
+
+    li {
+        font-size: 18px;
+    }
+
+    &_agreement {
+     
+        ol {
+            padding-left: 30px;
+        }
+
+        p,
+        li {
+         
+            line-height: 30px;
+            margin: 0 0 8px;
+        }
+
+        h3 {
+            font-size: 25px;
+            margin-top: 10px;
+            color: $main;
+        }
+    }
 }

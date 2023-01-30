@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f7f0d6;
+  background: rgba(30, 35, 38, 0.7);
   overflow: auto;
 
   &.popup_opened {
@@ -28,15 +28,16 @@
 
   &__close {
     position: absolute;
-    top: -35px;
+    top: 22px;
     cursor: pointer;
-    right: -35px;
+    right: 12px;
     font-size: 30px;
     color: black;
-    background-color: transparent !important;
-    span {
-      color: black;
-    }
+    background-image: url(../img/close.svg);
+    width: 27px;
+    height: 27px;
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 
   &__img {
@@ -53,6 +54,4 @@
       max-width: 85vw;
     }
   }
-
-  
 }

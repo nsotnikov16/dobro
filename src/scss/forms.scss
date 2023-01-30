@@ -1,0 +1,194 @@
+.form {
+    max-width: 576px;
+    background: white;
+    border-radius: 15px;
+
+    &__success {
+        display: none;
+    }
+
+    &__error {
+        display: none;
+        font-size: 14px;
+        color: red;
+        margin-top: 20px;
+        padding: 5px;
+        border: 1px solid red;
+    }
+
+    &_error {
+        .form__error {
+            display: block;
+        }
+    }
+
+    &_success {
+        .form__main {
+            display: none;
+        }
+
+        .form__success {
+            display: block;
+        }
+    }
+
+    &__container {
+        &_waves {
+            background-image: url(../img/waves.svg);
+            background-size: 60% 100px;
+            background-repeat: no-repeat;
+            background-position: 0 44px;
+            .form__title {
+                margin-top: 44px;
+            }
+        }
+        padding: 45px 60px;
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        margin-bottom: 23px;
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.02em;
+        margin-bottom: 36px;
+    }
+
+    &__rows {
+    }
+
+    &__row {
+        position: relative;
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &::after {
+            content: "";
+            background-repeat: no-repeat;
+            background-size: 100%;
+            display: block;
+            position: absolute;
+            top: 26px;
+            right: 22px;
+        }
+
+        &_person {
+            &::after {
+                background-image: url(../img/form/person.svg);
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        &_phone {
+            &::after {
+                content: "";
+                background-image: url(../img/form/phone.svg);
+                background-repeat: no-repeat;
+                width: 16px;
+                height: 16px;
+                display: block;
+            }
+        }
+    }
+
+    &__input {
+        padding: 23px 20px;
+        background: $gray;
+        border: 1px solid $gray;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: $black;
+        width: 100%;
+        &.invalid {
+            border-color: red;
+        }
+
+        &:focus {
+            & + .form__placeholder {
+                display: none;
+            }
+        }
+    }
+
+    &__placeholder {
+        position: absolute;
+        top: 23px;
+        left: 23px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: $black;
+    }
+
+    &__btn {
+        margin-top: 23px;
+        width: 100%;
+        padding: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $linear-blue;
+        color: white;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 48px;
+        letter-spacing: 0.02em;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+        border-radius: 10px;
+    }
+
+    &__agree {
+        margin-top: 24px;
+        display: flex;
+        input {
+            opacity: 0;
+            position: absolute;
+            &:checked + .form__checkbox {
+                background: #11b3f1;
+            }
+
+            &.invalid + .form__checkbox + label {
+                color: red !important;
+            }
+
+            cursor: pointer;
+        }
+
+        a {
+            border-bottom: 1px solid $blue;
+        }
+    }
+
+    &__checkbox {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+
+        border: 4.27088px solid #f0f4f8;
+        border-radius: 8.54177px;
+        margin-right: 7px;
+        cursor: pointer;
+    }
+
+    label:not(.form__placeholder) {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.01em;
+        color: $black;
+        cursor: pointer;
+    }
+}

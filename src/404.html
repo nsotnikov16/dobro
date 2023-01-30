@@ -1,0 +1,33 @@
+@@include('html/head.html', {"title": "Страница не найдена", "dop": ""})
+
+<body>
+    <div class="page">
+        <!-- Шапка -->
+        @@include('html/header.html', {})
+
+        <main>
+            <section class="section">
+                <div class="page__container">
+                    <div class="page__404">
+                        <img data-src="./img/404.png">
+                        <h1>К сожалению, страница не найдена</h1>
+                        <a href="./index.html" class="btn btn_all">ВЕРНУТЬСЯ НА ГЛАВНУЮ <svg>
+                                <use href="./img/icons/icons.svg#arrow"></use>
+                            </svg></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Подвал -->
+        @@include('html/footer.html', {})
+
+    </div>
+
+    <!-- Модалки -->
+    @@include('html/popups.html', {})
+
+    @@include('html/scripts.html', {})
+</body>
+
+</html>

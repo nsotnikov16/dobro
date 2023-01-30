@@ -177,3 +177,34 @@
   transform: translateY(3px);
   flex-shrink: 0;
 }
+
+main {
+  min-height: 100px;
+}
+
+.page__404 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 38px;
+    margin: 35px 0;
+  }
+
+  .btn_all {
+    width: 100%;
+    max-width: 390px;
+  }
+}
+
+
+[data-src], [data-srcset] {
+  background-image: url(../img/loader.gif);
+  min-height: 100px;
+  background-size: 64px 64px;
+  background-position: center;
+  background-repeat: no-repeat;
+}

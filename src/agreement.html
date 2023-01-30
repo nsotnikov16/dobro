@@ -1,0 +1,25 @@
+@@include('html/head.html', {"title": "Пользовательское соглашение", "dop": ""})
+
+<body>
+    <div class="page page_inner">
+        <!-- Шапка -->
+        @@include('html/header.html', {})
+        @@include('html/breadcrumbs.html', {"current": "Пользовательское соглашение", "prev": "<li><a href='#'>Документы</a></li>"})
+        <main>
+
+         <!-- Пользовательское соглашение -->
+        @@include('html/agreement.html', {})
+
+        </main>
+        <!-- Подвал -->
+        @@include('html/footer.html', {})
+
+    </div>
+
+    <!-- Модалки -->
+    @@include('html/popups.html', {})
+
+    @@include('html/scripts.html', {})
+</body>
+
+</html>
