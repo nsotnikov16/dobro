@@ -1,0 +1,102 @@
+.works {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 31px;
+
+    &__btn {
+        margin-top: 40px;
+    }
+}
+.work {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    &::before,
+    &::after {
+        position: absolute;
+        top: 0;
+        width: 84px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $gray;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: black;
+        z-index: 100;
+    }
+
+    &::before {
+        content: "до";
+        left: 0;
+        border-bottom-right-radius: 10px;
+    }
+
+    &::after {
+        content: "после";
+        right: 0;
+        border-bottom-left-radius: 10px;
+    }
+    &__top {
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            height: 298px;
+            border-radius: 10px 10px 0 0;
+        }
+    }
+
+    &__bottom {
+        padding: 25px 30px;
+        background: $gray;
+        height: calc(100% - 298px);
+        h3 {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+            &:not(:first-child) {
+                margin-top: 10px;
+            }
+        }
+        p {
+            font-size: 18px;
+            line-height: 24px;
+            margin-top: 7px;
+        }
+    }
+
+    .twentytwenty-handle {
+        background: $linear-blue;
+        border: 1px solid white;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        &::before,
+        &::after {
+            background: $blue;
+            box-shadow: none;
+        }
+
+        .twentytwenty-left-arrow,
+        .twentytwenty-right-arrow {
+            border: none;
+            background-image: url(../img/twenty-arrow.svg);
+            background-size: 20px 20px;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+        }
+
+        .twentytwenty-left-arrow {
+            margin-left: -20px;
+        }
+
+        .twentytwenty-right-arrow {
+            margin-right: -20px;
+            transform: scaleX(-1);
+        }
+    }
+}

@@ -1,4 +1,4 @@
-@@include('html/head.html', {"title": "Галкина Екатерина Александровна"})
+@@include('html/head.html', {"title": "Галкина Екатерина Александровна", "dop": ""})
 
 <body>
     <div class="page page_inner">
@@ -15,6 +15,9 @@
 
             <!-- Лицензии и сертификаты -->
             @@include('html/licenses.html', {})
+
+             <!-- Работы врача -->
+             @@include('html/works.html', {"title": "Работы врача"})
 
             <!-- Врачи -->
 			@@include('html/doctors.html', {"color": "gray"})
