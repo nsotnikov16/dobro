@@ -71,6 +71,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.2s ease-out;
+    &:hover {
+      background: $gray;
+    }
     svg {
       fill: white;
       width: 18px;
@@ -83,12 +87,22 @@
     svg {
       transform: translate(0, 1px);
     }
+
+    &:hover svg {
+      fill: #7f3cd3;
+    }
   }
   .whatsapp {
     background: #3cd382;
+    &:hover svg {
+      fill: #3cd382;
+    }
   }
   .vk {
     background: #0077ff;
+    &:hover svg {
+      fill: #0077ff;
+    }
   }
 }
 
@@ -104,6 +118,29 @@
   text-align: center;
   padding: 16px 22px;
   border-radius: 999px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    background: $linear-green;
+    opacity: 0;
+    left: 0;
+    width: 101%;
+    height: 101%;
+  }
+  &:hover,
+  &:active {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    &::after {
+      opacity: 1;
+      transition: opacity 0.2s ease-out;
+      z-index: -1;
+    }
+  }
 
   &_all {
     border: 2px solid $blue;
@@ -113,12 +150,21 @@
     line-height: 65px;
     justify-content: space-between;
     padding: 0 35px;
-
+    transition: border-color 0.2s ease-out;
     max-width: 330px;
     margin: 0 auto;
     svg {
       width: 24px;
       height: 24px;
+    }
+
+    &::after {
+      content: initial;
+    }
+
+    &:hover,
+    &:active {
+      border-color: $green;
     }
   }
 }
@@ -132,6 +178,7 @@
   cursor: pointer;
   width: 44px;
   height: 44px;
+  transition: background-color 0.3s ease-out;
 }
 
 .btn-up::before {
@@ -151,7 +198,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .btn-up:hover {
-    background-color: #512da8; /* цвет заднего фона при наведении */
+    background: $green; /* цвет заднего фона при наведении */
   }
 }
 
@@ -166,6 +213,11 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+
+  transition: background-image 0.2s ease-out;
+  &:hover {
+    background-image: url(../img/lupa-green.svg);
+  }
 }
 .icon-download {
   background-image: url(../img/download.svg);
@@ -200,8 +252,8 @@ main {
   }
 }
 
-
-[data-src], [data-srcset] {
+[data-src],
+[data-srcset] {
   background-image: url(../img/loader.gif);
   min-height: 100px;
   background-size: 64px 64px;

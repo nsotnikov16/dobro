@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/swiper-bundle.min.js"></script>
@@ -26,15 +27,14 @@
                 <svg>
                     <use href="./img/icons/icons.svg#location"></use>
                 </svg>
-                <p>30 лет Победы, 44Б<br><span>офис 307, 3 этаж</span></p>
+                <p>30 лет Победы, 44Б<br><span class="scroll" href="#contacts">офис 307, 3 этаж</span></p>
             </div>
-            <div class="header__block header__block_phone">
+            <a href="tel:+79959150094" class="header__block header__block_phone">
                 <svg>
                     <use href="./img/icons/icons.svg#phone"></use>
                 </svg>
                 <p>+7 (995) 915-00-94<br><span>Перезвоним за 5 минут</span></p>
-                <div class="triangle"></div>
-            </div>
+            </a>
             <div class="social header__social">
                 <a href="#" class="viber"><svg>
                         <use href="./img/icons/icons.svg#viber"></use>
@@ -98,7 +98,7 @@
         <div class="breadcrumbs">
     <div class="page__container">
         <ul>
-            <li class="breadcrumbs__back" onclick="history.back()"></li>
+            <li class="breadcrumbs__back" onclick="history.back()"><svg><use href="./img/icons/icons.svg#arrow"></use></svg></li>
             <li><a href="./index.html">Главная</a></li>
             
             <li><a href="javascript:void(0)">Услуги</a></li>
@@ -284,7 +284,7 @@
     <div class="popup" id="feedback">
     <div class="popup__container">
         <div class="popup__content">
-            <form class="form" action="https://jsonplaceholder.typicode.com/posts" novalidate>
+            <form class="form" action="https://jsonplaceholder.typicode.com/posts" novalidate data-method="POST">
                 <div class="form__container form__container_waves form__main">
                     <h2 class="form__title">ЗАПИШИТЕСЬ НА ПРИЁМ</h2>
                     <p class="form__subtitle">Наш менеджер перезвонит в течении минуты и проконсультирует по всем

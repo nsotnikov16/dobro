@@ -45,6 +45,10 @@ body {
     background-color: white;
     .footer {
       background-color: $gray;
+
+      .footer__social a:hover {
+        background: white;
+      }
     }
   }
 

@@ -96,6 +96,11 @@
     background-repeat: no-repeat;
     width: 183px;
     height: 172px;
+    transition: background-image 0.2s ease-out;
+    &:hover {
+      background-image: url(../img/pass-green.png);
+    }
+
     &::before {
       content: "";
       display: block;

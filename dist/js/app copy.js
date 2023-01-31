@@ -126,7 +126,6 @@ function scroll(item) {
 
 anchors.forEach(item => item.addEventListener('click', (e) => {
     e.preventDefault()
-    if (item.closest('.header')) header.className = 'header'
     scroll(item)
 }))
 

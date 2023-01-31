@@ -38,6 +38,10 @@
     height: 27px;
     background-repeat: no-repeat;
     background-size: 100%;
+    transition: filter 0.2s ease-out;
+    &:hover {
+      filter: brightness(0.1);
+    }
   }
 
   &__img {

@@ -14,11 +14,23 @@
     background: $gray;
     border-radius: 33px;
     position: relative;
+    transition: background-color 0.2s ease-out;
+    &:hover {
+      background: #F1F8F0;
+    }
+
+    overflow: hidden;
   }
 
   &__item-top {
     display: flex;
     align-items: center;
+    a {
+      transition: color 0.2s ease-out;
+      &:hover {
+        color: $green;
+      }
+    }
   }
 
   &__year {
@@ -42,13 +54,15 @@
   }
 
   &__photo {
-    width: 50px;
+   /*  width: 50px; */
     height: 100px;
-    object-fit: contain;
+    /* object-fit: contain; */
     position: absolute;
     top: 32px;
     right: 0;
     border-radius: 8px 0 0 8px;
+    max-width: 140px;
+    transform: translateX(60%);
   }
 
   &__item-bottom {

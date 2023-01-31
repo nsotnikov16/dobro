@@ -168,14 +168,14 @@ setSameHeight('.passage__info h3')
 
 
 const elementsWithArrow = document.querySelectorAll('.with-arrow')
-if(elementsWithArrow.length) {
+if (elementsWithArrow.length) {
     elementsWithArrow.forEach(el => el.insertAdjacentHTML('afterbegin', '<svg><use href="./img/icons/icons.svg#arrow-spoiler"></use></svg>'))
 }
 
 // Aside Service
-const asideServiceList = document.querySelector('.service__aside .popular__list_service') 
-if(asideServiceList) {
-    
+const asideServiceList = document.querySelector('.service__aside .popular__list_service')
+if (asideServiceList) {
+
 }
 
 /* Спойлеры */
@@ -186,6 +186,43 @@ if (spoilers.length > 0) {
         top.addEventListener('click', () => spoiler.classList.toggle('spoiler-open'))
     })
 }
+
+
+const anchors = [].slice.call(document.querySelectorAll('.scroll')),
+    animationTime = 400,
+    framesCount = 20;
+
+function scroll(item) {
+    let element = document.querySelector(item.getAttribute('href'))
+    if (!element) return
+    // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
+    let coordY = element.getBoundingClientRect().top + window.pageYOffset;
+
+    // запускаем интервал, в котором
+    let scroller = setInterval(function () {
+        // считаем на сколько скроллить за 1 такт
+        let scrollBy = coordY / framesCount;
+
+        // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
+        // и дно страницы не достигнуто
+        if (scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+
+            // то скроллим на к-во пикселей, которое соответствует одному такту
+            window.scrollBy(0, scrollBy);
+        } else {
+            // иначе добираемся до элемента и выходим из интервала
+            window.scrollTo(0, coordY);
+            clearInterval(scroller);
+        }
+        // время интервала равняется частному от времени анимации и к-ва кадров
+    }, animationTime / framesCount);
+
+}
+
+anchors.forEach(item => item.addEventListener('click', (e) => {
+    e.preventDefault()
+    scroll(item)
+}))
 
 // Popups
 class Popup {
@@ -212,7 +249,11 @@ class Popup {
         document.body.style.overflow = "visible";
         document.removeEventListener('keydown', this._handleEscClose);
         if (this.form && this.form.classList.contains('form_success')) {
-            setTimeout(() => { this.form.classList.remove('form_success') }, 300)
+            setTimeout(() => {
+                const valids = this.form.querySelectorAll('.valid')
+                if (valids.length) valids.forEach(v => v.classList.remove('valid'))
+                this.form.classList.remove('form_success')
+            }, 300)
         }
     }
 
@@ -295,7 +336,7 @@ if (inputs.length) {
     })
 }
 
-function isValidInputs(inputs) {
+function isValidInputs(inputs, afterSubmit) {
     if (!inputs || !inputs.length) return false
     return inputs.every(input => {
 
@@ -304,10 +345,13 @@ function isValidInputs(inputs) {
             valid = input.value.length >= input.minLength
         }
 
+
         if (!valid) {
             input.classList.add('invalid')
+            input.classList.remove('valid')
         } else {
             input.classList.remove('invalid')
+            input.classList.add('valid')
         }
 
         return valid
@@ -336,9 +380,11 @@ if (forms.length) {
                 button.textContent = 'Отправляем...'
             }
 
+            const data = new FormData(form)
+
             fetch(action, {
-                method: form.method || form.dataset.method,
-                body: new FormData(form)
+                method: form.dataset.method || form.method,
+                body: data
             })
                 .then(response => {
                     if (response.ok) return response.text()
@@ -351,7 +397,6 @@ if (forms.length) {
                         form.reset()
                         if (placeholders.length) placeholders.forEach(p => p.style.display = 'block')
                     }
-
                 })
                 .catch(err => form.classList.add('form_error'))
                 .finally(() => {

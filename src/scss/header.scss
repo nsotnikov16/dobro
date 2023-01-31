@@ -42,6 +42,11 @@
       padding-bottom: 2px;
       border-bottom: 1px solid $blue;
       cursor: pointer;
+      transition-property: border-color;
+      transition: 0.2s ease-out;
+      &:hover {
+        border-color: $green;
+      }
     }
 
     &_address {
@@ -74,6 +79,11 @@
         font-size: 16px;
         line-height: 19px;
         color: $main;
+        transition: color 0.2s ease-out;
+
+        &:hover {
+          color: $green;
+        }
       }
 
       > li {
@@ -172,7 +182,8 @@
           visibility: visible;
         }
 
-        >a {
+        > a {
+          color: $green;
           &::before {
             opacity: 1;
             visibility: visible;
@@ -214,9 +225,8 @@
   }
 }
 
-
 .page_inner .link-dropdown {
-  >a {
+  > a {
     &::before {
       background: $gray;
     }

@@ -7,7 +7,6 @@
         &_service {
             grid-template-columns: 1fr;
             .popular__item-top {
-                
                 padding: 10px 0;
                 a {
                     font-size: 25px;
@@ -25,9 +24,21 @@
     &__item {
         background: rgba(240, 244, 248, 0.5);
         border-radius: 33px;
-        &_active {
+        transition: background-color 0.2s ease-out;
+        position: relative;
+
+        
+
+        &_active,
+        &:hover {
             .popular__item-top {
-                background: $linear-green;
+               /*  background: $linear-green; */
+                z-index: 2;
+                &::after {
+                    opacity: 1;
+                    transition: opacity 0.2s ease-out;
+                    z-index: -1;
+                }
             }
         }
 
@@ -56,6 +67,17 @@
         justify-content: space-between;
         align-items: center;
         overflow: hidden;
+
+        &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            background: $linear-green;
+            opacity: 0;
+            left: 0;
+            width: 101%;
+            height: 101%;
+        }
         a {
             font-weight: 700;
             font-size: 30px;

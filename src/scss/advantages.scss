@@ -31,6 +31,10 @@
         &-bullet {
             background: linear-gradient(0deg, #04394e, #04394e), linear-gradient(0deg, #c0cdd1, #c0cdd1);
             opacity: 1;
+            transition: background-color 0.2s ease-out;
+            &:hover {
+                background: $green;
+            }
         }
 
         &-bullet-active {

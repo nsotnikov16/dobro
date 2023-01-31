@@ -37,6 +37,12 @@
                 height: 50px;
                 border-radius: 50%;
                 background-color: white;
+                transition: 0.2s ease-out;
+                transition-property: color, background-color;
+                &:hover, &:active {
+                    background-color: $green;
+                    color: white;
+                }
 
                 &::after {
                     font-size: 18px;
@@ -76,6 +82,10 @@
         &-bullet {
             background: linear-gradient(0deg, #04394e, #04394e), linear-gradient(0deg, #c0cdd1, #c0cdd1);
             opacity: 1;
+            transition: background-color 0.2s ease-out;
+            &:hover {
+                background: $green;
+            }
         }
 
         &-bullet-active {
