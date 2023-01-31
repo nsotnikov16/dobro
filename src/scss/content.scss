@@ -16,14 +16,12 @@
     }
 
     &_agreement {
-     
         ol {
             padding-left: 30px;
         }
 
         p,
         li {
-         
             line-height: 30px;
             margin: 0 0 8px;
         }
@@ -32,6 +30,46 @@
             font-size: 25px;
             margin-top: 10px;
             color: $main;
+        }
+    }
+
+    &_service {
+        img {
+            border-radius: 32px;
+            margin-top: 15px;
+        }
+
+        p {
+            line-height: 30px;
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 38px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: initial;
+            padding-left: 20px;
+        }
+    }
+
+    &_sovet {
+        h2 {
+            font-size: 36px;
+        }
+
+        h3 {
+            font-size: 24px;
+            line-height: 30px;
+            color: $main;
+        }
+
+        p {
+            font-weight: 500;
+            line-height: 30px;
         }
     }
 }

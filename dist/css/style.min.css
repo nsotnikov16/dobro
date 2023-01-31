@@ -887,6 +887,35 @@ main {
   margin-top: 10px;
   color: #04394e;
 }
+.content_service img {
+  border-radius: 32px;
+  margin-top: 15px;
+}
+.content_service p {
+  line-height: 30px;
+}
+.content_service h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 38px;
+  margin-bottom: 20px;
+}
+.content_service ul {
+  list-style: initial;
+  padding-left: 20px;
+}
+.content_sovet h2 {
+  font-size: 36px;
+}
+.content_sovet h3 {
+  font-size: 24px;
+  line-height: 30px;
+  color: #04394e;
+}
+.content_sovet p {
+  font-weight: 500;
+  line-height: 30px;
+}
 
 /* Модалки */
 .popup {
@@ -947,78 +976,39 @@ main {
 }
 
 /* Спойлеры */
-.spoiler {
-  border-bottom: 1px solid rgba(11, 1, 29, 0.25);
+.spoiler .with-arrow svg {
+  transform: rotate(0);
+  transition: transform 0.2s ease-in-out;
 }
-.spoiler:first-child {
-  border-top: 1px solid rgba(11, 1, 29, 0.25);
+.spoiler * {
+  user-select: none;
 }
-.spoiler__top {
-  padding: 30px 0;
-  display: flex;
-  justify-content: space-between;
+.spoiler-top {
   cursor: pointer;
 }
-.spoiler__name {
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 140%;
-  margin-right: 20px;
-}
-.spoiler > .spoiler__top > .spoiler__btn {
-  transform: rotate(0);
-  transition: transform 0.3s ease-in;
-}
-.spoiler > .spoiler__top > .spoiler__btn::before, .spoiler > .spoiler__top > .spoiler__btn::after {
-  content: "";
-  display: block;
-  width: 26px;
-  height: 2px;
-  background: #0b011d;
-  border-radius: 2px;
-  opacity: 0.8;
-}
-.spoiler > .spoiler__top > .spoiler__btn::after {
-  transform: rotate(90deg) translateX(-2px);
-}
-.spoiler > .spoiler__bottom {
-  max-height: 0;
-  transform: translateY(-10%);
+.spoiler-bottom {
   overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease-in-out;
+  visibility: hidden;
+  max-height: 0;
+  transition: 0.2s ease-in-out;
+  transition-property: visibility, max-height, padding;
 }
-.spoiler_open > .spoiler__bottom {
-  max-height: initial;
-  transform: translateY(0);
+.spoiler-bottom:not(.spoiler-open .spoiler-bottom) {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.spoiler-bottom:not(.spoiler-open .spoiler-bottom).popular__item-bottom {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.spoiler-open .spoiler-bottom {
   overflow: visible;
-  opacity: 1;
+  visibility: visible;
+  max-height: initial;
 }
-.spoiler_open > .spoiler__top > .spoiler__btn {
+.spoiler-open .with-arrow svg {
   transform: rotate(180deg);
-}
-.spoiler_open > .spoiler__top > .spoiler__btn::after {
-  opacity: 0;
-}
-@media (max-width: 767px) {
-  .spoiler__name {
-    font-size: 24px;
-  }
-  .spoiler__top {
-    padding: 25px 0;
-  }
-}
-.spoiler .content {
-  padding-bottom: 30px;
-}
-@media (min-width: 1025px) {
-  .spoiler .content {
-    max-width: 80%;
-  }
-}
-
-.spoilers_faq {
-  margin-bottom: 100px;
+  transition: transform 0.2s ease-in-out;
 }
 
 /* Шапка */
@@ -1466,11 +1456,25 @@ main {
   grid-template-columns: repeat(3, 370px);
   gap: 15px 30px;
 }
+.popular__list_service {
+  grid-template-columns: 1fr;
+}
+.popular__list_service .popular__item-top {
+  padding: 10px 0;
+}
+.popular__list_service .popular__item-top a {
+  font-size: 25px;
+  line-height: 90%;
+}
+.popular__list_service .popular__item-top div {
+  min-width: 84px;
+  min-height: 84px;
+}
 .popular__item {
   background: rgba(240, 244, 248, 0.5);
   border-radius: 33px;
 }
-.popular__item:first-child .popular__item-top {
+.popular__item_active .popular__item-top {
   background: linear-gradient(121.12deg, #6ad474 -10.29%, #62ff71 105.05%), linear-gradient(121.12deg, #00adef -10.29%, #66d3fd 105.05%);
 }
 .popular__item_services {
@@ -1505,6 +1509,17 @@ main {
   padding-left: 48px;
   word-break: break-word;
 }
+.popular__item-top a.with-arrow {
+  display: flex;
+  padding-left: 45px;
+}
+.popular__item-top a.with-arrow svg {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  flex-shrink: 0;
+  margin-right: 5px;
+}
 .popular__item-top div {
   background-position: right center;
   background-size: contain;
@@ -1530,6 +1545,10 @@ main {
 .popular__item-bottom a {
   padding-bottom: 2px;
   border-bottom: 1px solid #00adef;
+}
+.popular__item-bottom a.active {
+  border-color: #00adef;
+  color: #00adef;
 }
 .popular__item-bottom a:hover {
   color: #67df73;
@@ -2153,6 +2172,103 @@ main {
   line-height: 24px;
   color: #00adef;
   font-family: "Roboto";
+}
+
+/* Услуга */
+.service__grid {
+  display: grid;
+  grid-template-columns: 65.8% 1fr;
+  gap: 30px;
+}
+.service__top {
+  max-width: 1360px;
+  background: linear-gradient(0deg, #f0f4f8, #f0f4f8), #ffffff;
+  border-radius: 32px;
+  margin: 0 auto 65px;
+  position: relative;
+  overflow: hidden;
+}
+.service__top::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background: linear-gradient(86.21deg, #f0f4f8 42.3%, rgba(240, 244, 248, 0.93) 54.59%, rgba(240, 244, 248, 0) 68.07%);
+  z-index: 2;
+  width: 110%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.service__top-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  min-height: 420px;
+}
+.service__top-info {
+  max-width: 603px;
+  z-index: 2;
+  position: relative;
+}
+.service__top-title {
+  margin-bottom: 0;
+}
+.service__top-subtitle {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 30px;
+  max-width: 470px;
+}
+.service__top-photo {
+  width: 700px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  height: 100%;
+}
+.service__top-price {
+  margin-bottom: 20px;
+}
+/* Совет доктора */
+.sovet {
+  margin-top: 40px;
+  padding: 30px 40px 24px 0;
+  background: rgba(240, 244, 248, 0.5);
+  border-left: 5px solid #00adef;
+  border-radius: 0px 32px 32px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.sovet .doctor {
+  background: transparent;
+  width: 31.6%;
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+.sovet .doctor > a {
+  position: relative;
+}
+.sovet .doctor > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 130px;
+  display: block;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0) 70.05%, #F8FAFC 94.87%);
+}
+.sovet .doctor__experience {
+  transform: translateX(-46px);
+}
+.sovet .doctor__info {
+  padding-left: 46px;
+}
+.sovet .doctor__info-top {
+  padding-left: 0;
 }
 
 /* Акции */

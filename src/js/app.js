@@ -167,6 +167,26 @@ btnUp.addEventListener();
 setSameHeight('.passage__info h3')
 
 
+const elementsWithArrow = document.querySelectorAll('.with-arrow')
+if(elementsWithArrow.length) {
+    elementsWithArrow.forEach(el => el.insertAdjacentHTML('afterbegin', '<svg><use href="./img/icons/icons.svg#arrow-spoiler"></use></svg>'))
+}
+
+// Aside Service
+const asideServiceList = document.querySelector('.service__aside .popular__list_service') 
+if(asideServiceList) {
+    
+}
+
+/* Спойлеры */
+const spoilers = document.querySelectorAll('.spoiler')
+if (spoilers.length > 0) {
+    spoilers.forEach(spoiler => {
+        const top = spoiler.querySelector('.spoiler-top')
+        top.addEventListener('click', () => spoiler.classList.toggle('spoiler-open'))
+    })
+}
+
 // Popups
 class Popup {
     constructor(popupElement) {
@@ -192,7 +212,7 @@ class Popup {
         document.body.style.overflow = "visible";
         document.removeEventListener('keydown', this._handleEscClose);
         if (this.form && this.form.classList.contains('form_success')) {
-            setTimeout(() => {this.form.classList.remove('form_success')}, 300)
+            setTimeout(() => { this.form.classList.remove('form_success') }, 300)
         }
     }
 
@@ -317,7 +337,8 @@ if (forms.length) {
             }
 
             fetch(action, {
-                method: form.method || form.dataset.method
+                method: form.method || form.dataset.method,
+                body: new FormData(form)
             })
                 .then(response => {
                     if (response.ok) return response.text()

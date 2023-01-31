@@ -3,12 +3,29 @@
         display: grid;
         grid-template-columns: repeat(3, 370px);
         gap: 15px 30px;
+
+        &_service {
+            grid-template-columns: 1fr;
+            .popular__item-top {
+                
+                padding: 10px 0;
+                a {
+                    font-size: 25px;
+                    line-height: 90%;
+                }
+
+                div {
+                    min-width: 84px;
+                    min-height: 84px;
+                }
+            }
+        }
     }
 
     &__item {
         background: rgba(240, 244, 248, 0.5);
         border-radius: 33px;
-        &:first-child {
+        &_active {
             .popular__item-top {
                 background: $linear-green;
             }
@@ -46,6 +63,19 @@
             color: white;
             padding-left: 48px;
             word-break: break-word;
+
+            &.with-arrow {
+                display: flex;
+                padding-left: 45px;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    display: inline-block;
+                    flex-shrink: 0;
+                    margin-right: 5px;
+                }
+            }
         }
         div {
             background-position: right center;
@@ -73,6 +103,10 @@
         }
 
         a {
+            &.active {
+                border-color: $blue;
+                color: $blue;
+            }
             &:hover {
                 color: $green;
             }

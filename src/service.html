@@ -1,0 +1,36 @@
+@@include('html/head.html', {"title": "Одномоментная имплантация", "dop": ""})
+
+<body>
+    <div class="page page_inner">
+        <!-- Шапка -->
+        @@include('html/header.html', {})
+        @@include('html/breadcrumbs.html', {"current": "Одномоментная имплантация", "prev": "<li><a href='./services.html'>Услуги</a></li>"})
+        <main>
+            <div class="service">
+                @@include('html/service-top.html', {})
+                <div class="service__grid page__container">
+                    @@include('html/service-detail.html', {})
+                    @@include('html/service-aside.html', {})
+                </div>
+            </div>
+
+            @@include('html/sovet.html', {})
+
+            @@include('html/works.html', {"title": "Примеры работ"})
+
+            <!-- Остались сомнения? -->
+			@@include('html/ask.html', {"color": "gray"})
+
+        </main>
+        <!-- Подвал -->
+        @@include('html/footer.html', {})
+
+    </div>
+
+    <!-- Модалки -->
+    @@include('html/popups.html', {})
+
+    @@include('html/scripts.html', {})
+</body>
+
+</html>
