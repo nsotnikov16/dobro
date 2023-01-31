@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <script src="./js/jquery.event.move.js"></script>
+    <script src="./js/jquery.twentytwenty.js"></script>
+    
+    <title>Главная страница</title>
+</head>
+
+<body>
+	<div class="page">
+		<!-- Шапка -->
+		<header class="header">
+    <div class="header__top">
+        <div class="page__container ">
+            <a href="./index.html" class="logo header__logo"></a>
+            <div class="header__block header__block_address">
+                <svg>
+                    <use href="./img/icons/icons.svg#location"></use>
+                </svg>
+                <p>30 лет Победы, 44Б<br><span class="scroll" href="#contacts">офис 307, 3 этаж</span></p>
+            </div>
+            <a href="tel:+79959150094" class="header__block header__block_phone">
+                <svg>
+                    <use href="./img/icons/icons.svg#phone"></use>
+                </svg>
+                <p>+7 (995) 915-00-94<br><span>Перезвоним за 5 минут</span></p>
+            </a>
+            <div class="social header__social">
+                <a href="#" class="viber"><svg>
+                        <use href="./img/icons/icons.svg#viber"></use>
+                    </svg></a>
+                <a href="#" class="whatsapp"><svg>
+                        <use href="./img/icons/icons.svg#whatsapp"></use>
+                    </svg></a>
+                <a href="#" class="vk"><svg>
+                        <use href="./img/icons/icons.svg#vk"></use>
+                    </svg></a>
+            </div>
+            <button class="btn" data-pointer="feedback">ЗАПИСАТЬСЯ НА ПРИЕМ</button>
+        </div>
+    </div>
+    <div class="header__bottom">
+        <div class="page__container">
+            <nav class="header__nav">
+    <ul>
+        <li>
+            <a href="./about.html" class="selected">О клинике</a>
+        </li>
+        <li>
+            <a href="./services.html">Услуги</a>
+        </li>
+        <li class="link-dropdown">
+            <a href="javascript:void(0)">Врачи</a>
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">Работы врачей</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="link-dropdown">
+            <a href="javascript:void(0)">Пациентам</a>
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">Дисконтная система </a>
+                    </li>
+                    <li>
+                        <a href="#">Рассрочка</a>
+                    </li>
+                    <li>
+                        <a href="#">Вопросы и ответы</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a href="#" class="link-reviews">Отзывы<span>200+</span></a>
+        </li>
+        <li><a href="./stocks.html" class="link-stocks">Акции</a></li>
+        <li><a href="./contacts.html">Контакты</a></li>
+    </ul>
+</nav>
+        </div>
+    </div>
+</header>
+		
+		<main>
+			<!-- Баннеры -->
+			<div class="page__container">
+    <div class="banners">
+        <div class="swiper banners__swiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="banner">
+                        <div class="swiper banner__swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+    <h2 class="banner__title">Вылечим зубы без страха и боли за 2 дня в Сургуте</h2>
+    <p class="banner__subtitle">Проведём полную диагностику ротовойполости <b>и выстроим план лечения</b></p>
+    <a href="#" class="btn banner__btn">ЗАПИСАТЬСЯ НА ПРИЕМ <svg>
+            <use href="./img/icons/icons.svg#arrow"></use>
+        </svg></a>
+    <img data-src="./img/banners/1.png" class="banner__img">
+</div>
+                                <div class="swiper-slide">
+    <h2 class="banner__title">Бесплатная проф. гигиена полости рта перед имплантацией.</h2>
+    <p class="banner__subtitle">Проведём профессиональную чистку полости рта и подготовим вас к процедуре</p>
+    <a href="#" class="btn banner__btn">ЗАПИСАТЬСЯ НА ПРИЕМ <svg>
+            <use href="./img/icons/icons.svg#arrow"></use>
+        </svg></a>
+    <img data-src="https://img.freepik.com/free-photo/at-a-dentist-with-a-smile_144627-891.jpg" class="banner__img">
+</div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="banner">
+                        <div class="swiper banner__swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+    <h2 class="banner__title">Вылечим зубы без страха и боли за 2 дня в Сургуте</h2>
+    <p class="banner__subtitle">Проведём полную диагностику ротовойполости <b>и выстроим план лечения</b></p>
+    <a href="#" class="btn banner__btn">ЗАПИСАТЬСЯ НА ПРИЕМ <svg>
+            <use href="./img/icons/icons.svg#arrow"></use>
+        </svg></a>
+    <img data-src="./img/banners/1.png" class="banner__img">
+</div>
+                                <div class="swiper-slide">
+    <h2 class="banner__title">Бесплатная проф. гигиена полости рта перед имплантацией.</h2>
+    <p class="banner__subtitle">Проведём профессиональную чистку полости рта и подготовим вас к процедуре</p>
+    <a href="#" class="btn banner__btn">ЗАПИСАТЬСЯ НА ПРИЕМ <svg>
+            <use href="./img/icons/icons.svg#arrow"></use>
+        </svg></a>
+    <img data-src="https://img.freepik.com/free-photo/at-a-dentist-with-a-smile_144627-891.jpg" class="banner__img">
+</div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <ul class="banners__columns">
+                        <li>
+                            <h3>Быстро</h3>
+                            <p>Лечим все зубы за 2 дня, устанавливаем импланты от 7 дней</p>
+                        </li>
+                        <li>
+                            <h3>Не больно</h3>
+                            <p>Качественная седация от опытного врача, вы ничего не почувствуете</p>
+                        </li>
+                        <li>
+                            <h3>Выгодно</h3>
+                            <p>Оптимальные цены на все виды стоматологических услуг. Скидки и акции</p>
+                        </li>
+                        <li>
+                            <h3>С гарантией</h3>
+                            <p>Даём гарантию на нашу работу 2 года</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="swiper-slide">
+                    <div class="banner">
+                        <div class="swiper banner__swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+    <h2 class="banner__title">Вылечим зубы без страха и боли за 2 дня в Сургуте</h2>
+    <p class="banner__subtitle">Проведём полную диагностику ротовойполости <b>и выстроим план лечения</b></p>
+    <a href="#" class="btn banner__btn">ЗАПИСАТЬСЯ НА ПРИЕМ <svg>
+            <use href="./img/icons/icons.svg#arrow"></use>
+        </svg></a>
+    <img data-src="./img/banners/1.png" class="banner__img">
+</div>
+                                <div class="swiper-slide">
+    <h2 class="banner__title">Бесплатная проф. гигиена полости рта перед имплантацией.</h2>
+    <p class="banner__subtitle">Проведём профессиональную чистку полости рта и подготовим вас к процедуре</p>
+    <a href="#" class="btn banner__btn">ЗАПИСАТЬСЯ НА ПРИЕМ <svg>
+            <use href="./img/icons/icons.svg#arrow"></use>
+        </svg></a>
+    <img data-src="https://img.freepik.com/free-photo/at-a-dentist-with-a-smile_144627-891.jpg" class="banner__img">
+</div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</div>
+
+			<!-- Популярные услуги -->
+			<section class="section section_white">
+    <div class="page__container">
+        <h2 class="section__title">Популярные услуги</h2>
+        <div class="popular">
+            <ul class="popular__list">
+                <li class="popular__item">
+                    <div class="popular__item-top">
+                        <a href="#">Ортодонтия</a>
+                        <div data-srcset="./img/popular/1.png"></div>
+                    </div>
+                    <ul class="popular__item-bottom">
+                        <li><a href="#">Трейнеры для коррекции прикуса</a></li>
+                        <li><a href="#">Лечение с применением элайнеров</a></li>
+                        <li><a href="#">Лечение с применением
+                                брекет-системы</a></li>
+                        <li><a href="#">Диагностика детей 12+, подростков, взрослых с аномалиями прикуса</a></li>
+                    </ul>
+                </li>
+                <li class="popular__item">
+                    <div class="popular__item-top">
+                        <a href="#">Имплантация</a>
+                        <div data-srcset="./img/popular/2.png"></div>
+                    </div>
+                    <ul class="popular__item-bottom">
+                        <li><a href="#">Имплантаты</a></li>
+                        <li><a href="#">Одномоментная имплантация</a></li>
+                        <li><a href="#">Отсроченная имплантация</a></li>
+                        <li><a href="#">Направленная костная регенерация</a></li>
+                        <li><a href="#">Синус-лифтинг</a></li>
+                    </ul>
+                </li>
+                <li class="popular__item">
+                    <div class="popular__item-top">
+                        <a href="#">Эстетическая
+                            стоматология</a>
+                        <div data-srcset="./img/popular/3.png"></div>
+                    </div>
+                    <ul class=" popular__item-bottom">
+                        <li><a href="#">Профессиональная гигиена полости рта</a></li>
+                        <li><a href="#">Отбеливание зубов</a></li>
+                        <li><a href="#">Эстетическая реставрация фронтальных и жевательных зубов</a></li>
+                    </ul>
+                </li>
+                <li class="popular__item">
+                    <div class="popular__item-top">
+                        <a href="#">Терапия</a>
+                        <div data-srcset="./img/popular/4.png"></div>
+                    </div>
+                    <ul class="popular__item-bottom">
+                        <li><a href="#">Лечение не кариозных поражений тканей зуба</a></li>
+                        <li><a href="#">Устранение эстетических дефектов</a></li>
+                        <li><a href="#">Лечение пульпита и периодонтита</a></li>
+                        <li><a href="#">Подготовка к протезированию (восстановление культи зуба)</a></li>
+                    </ul>
+                </li>
+                <li class="popular__item">
+                    <div class="popular__item-top">
+                        <a href="#">Хирургия</a>
+                        <div data-srcset="./img/popular/5.png"></div>
+                    </div>
+                    <ul class="popular__item-bottom">
+                        <li><a href="#">Удаление зуба</a></li>
+                        <li><a href="#">Лечение пародонтита</a></li>
+                        <li><a href="#">Пластика десны, уздечки
+                                языка и губы</a></li>
+                        <li><a href="#">Резекция верхушки корня зуба</a></li>
+                        <li><a href="#">Удаление новообразований</a></li>
+                    </ul>
+                </li>
+                <li class="popular__item">
+                    <div class="popular__item-top">
+                        <a href="#">Ортопедия</a>
+                        <div data-srcset="./img/popular/6.png"></div>
+                    </div>
+                    <ul class="popular__item-bottom">
+                        <li><a href="#">Съёмное протезирование</a></li>
+                        <li><a href="#">Несъёмное протезирование</a></li>
+                        <li><a href="#">Мостовидные протезы</a></li>
+                        <li><a href="#">Металлокерамические коронки</a></li>
+                        <li><a href="#">Временные пластмассовые коронки</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="#" class="btn btn_all popular__all">
+                ВСЕ УСЛУГИ
+                <svg>
+                    <use href="./img/icons/icons.svg#arrow"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+
+</section>
+
+			<!-- Преимущества -->
+			<section class="section">
+    <div class="page__container page__container_left">
+        <div class="advantages">
+            <div class="swiper advantages__swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img data-src="./img/advantages/1.png"></div>
+                    <div class="swiper-slide"><img
+                            data-src="https://img.freepik.com/free-photo/woman-patient-at-dentist_1303-9364.jpg"></div>
+                    <div class="swiper-slide"><img
+                            data-src="https://img.freepik.com/free-photo/beautiful-girl-sitting-in-the-dentist-s-office_1157-21014.jpg">
+                    </div>
+                    <div class="swiper-slide"><img
+                            data-src="https://img.freepik.com/free-photo/close-up-smiley-patient-at-appointment_23-2149164306.jpg">
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="advantages__info">
+                <h2 class="section__title">Почему вы должны посетить стоматологию «Добрые руки»?</h2>
+                <div class="content">
+                    <h3>Комплексное лечение</h3>
+                    <p>Предоставление полного спектра услуг для лечения всей семьи с предоставлением индивидуальной
+                        скидки.
+                        То есть, возможны особые условия для каждого клиента.</p>
+
+                    <h3>Специалисты своего дела</h3>
+                    <p>Все врачи ежегодно проходят курсы повышения квалификации, перенимая опыт как у Российских
+                        столичных коллег, так и международные учебы, симпозиумы, конференции. </p>
+
+                    <h3>Имплантирование</h3>
+                    <p>Все виды имплантации и протезирование в одном месте, берёмся за самые сложные случаи. Имеем
+                        большой опыт проведения операций по имплантации.
+                        В месяц устанавливаем более 100 имплантов!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+			<!-- Врачи -->
+			<section class="section">
+    <div class="page__container">
+        <div class="section__head">
+            <h2 class="section__title">Врачи</h2>
+            <p class="section__subtitle">Не скрываем лица потому что любим и знаем своё дело
+                и предлагаем качественное лечение за которое не стыдно</p>
+        </div>
+        <div class="doctors doctors_white">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="doctor">
+                            <a href="#">
+                                <img class="doctor__photo" data-src="./img/doctors/1.png" />
+                            </a>
+                            <div class="doctor__info">
+                                <div class="doctor__info-top">
+                                    <p class="doctor__experience">опыт работы: 8 лет</p>
+                                    <a href="#" class="doctor__name">Галкина Екатерина Александровна</a>
+                                    <p class="doctor__spec">Врач стоматолог-терапевт,
+                                        стоматолог-ортодонт</p>
+                                </div>
+                                <a href="#" class="btn btn_all doctor__btn">Подробнее <svg>
+                                        <use href="./img/icons/icons.svg#arrow"></use>
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="doctor">
+                            <a href="#">
+                                <img class="doctor__photo" data-src="./img/doctors/2.png" />
+                            </a>
+                            <div class="doctor__info">
+                                <div class="doctor__info-top">
+                                    <p class="doctor__experience">опыт работы: 8 лет</p>
+                                    <a href="#" class="doctor__name">Иванов Иван Иванович</a>
+                                    <p class="doctor__spec">Врач стоматолог-терапевт,
+                                        стоматолог-ортодонт</p>
+                                </div>
+                                <a href="#" class="btn btn_all doctor__btn">Подробнее <svg>
+                                        <use href="./img/icons/icons.svg#arrow"></use>
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="doctor">
+                            <a href="#">
+                                <img class="doctor__photo" data-src="./img/doctors/1.png" />
+                            </a>
+                            <div class="doctor__info">
+                                <div class="doctor__info-top">
+                                    <p class="doctor__experience">опыт работы: 8 лет</p>
+                                    <a href="#" class="doctor__name">Галкина Екатерина Александровна</a>
+                                    <p class="doctor__spec">Врач стоматолог-терапевт,
+                                        стоматолог-ортодонт</p>
+                                </div>
+                                <a href="#" class="btn btn_all doctor__btn">Подробнее <svg>
+                                        <use href="./img/icons/icons.svg#arrow"></use>
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="doctor">
+                            <a href="#">
+                                <img class="doctor__photo" data-src="./img/doctors/1.png" />
+                            </a>
+                            <div class="doctor__info">
+                                <div class="doctor__info-top">
+                                    <p class="doctor__experience">опыт работы: 8 лет</p>
+                                    <a href="#" class="doctor__name">Галкина Екатерина Александровна</a>
+                                    <p class="doctor__spec">Врач стоматолог-терапевт,
+                                        стоматолог-ортодонт</p>
+                                </div>
+                                <a href="#" class="btn btn_all doctor__btn">Подробнее <svg>
+                                        <use href="./img/icons/icons.svg#arrow"></use>
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+			<!-- Остались сомнения? -->
+			<section class="section">
+    <div class="page__container">
+        <div class="ask">
+            <div class="ask__left ask__left_white">
+                <h2>Остались сомнения?</h2>
+                <p>Позвоните нам, и мы ответим на все ваши вопросы</p>
+                <button class="btn ask__btn">ПОЗВОНИТЬ В КЛИНИКУ<svg>
+                        <use href="./img/icons/icons.svg#phone-white"></use>
+                    </svg></button>
+            </div>
+            <div class="ask__right" data-srcset="./img/ask-img.png">
+                <h2>70% пациентов приходят к нам по рекомендации
+                    к конкретному врачу</h2>
+                <p>А после лечения советуют нас своим друзьям и близким</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+			<!-- Контактная информация -->
+			<section class="section">
+				<div class="page__container">
+					<div id="contacts" class="contacts contacts_white">
+    <div class="contacts__info">
+        <h2 class="section__title">Контактная информация</h2>
+        <div class="contacts__block">
+            <h3>Адрес</h3>
+            <p>г. Сургут, 30 лет Победы 44 Б
+                (БЦ Север), 307 офис (3 этаж)</p>
+        </div>
+        <div class="contacts__block">
+            <h3>График работы:</h3>
+            <p>Пн — Пт — с 9:00 до 20:00<br>
+                Сб, вс — выходной день</p>
+        </div>
+        <div class="contacts__block">
+            <h3>Телефон</h3>
+            <a href="tel:+79552425523">+7 (955) 242-55-23</a>
+            <a href="tel:+79959150094">+7 (995) 915-00-94</a>
+        </div>
+
+        <div class="contacts__block">
+            <button class="btn contacts__btn btn_all">ЗАПИСАТЬСЯ <svg>
+                    <use href="./img/icons/icons.svg#arrow"></use>
+                </svg></button>
+        </div>
+    </div>
+    <div class="contacts__map">
+        <a href="./contacts.html" class="contacts__pass">
+            <span>
+                КАК ПРОЙТИ <svg>
+                    <use href="./img/icons/icons.svg#arrow"></use>
+                </svg>
+            </span>
+
+        </a>
+        <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A440476955b95a16097542fed0285677f766aeb8309a5b1db01655a9c8ebd6c93&amp;source=constructor"
+            width="100%" height="400" frameborder="0"></iframe>
+    </div>
+</div>
+				</div>
+			</section>
+
+
+		</main>
+
+
+
+		<!-- Подвал -->
+		<footer class="footer">
+    <div class="page__container">
+        <div class="footer__top">
+            <a href="./index.html" class="logo footer__logo"></a>
+            <div class="social footer__social">
+                <a href="#" class="viber"><svg>
+                        <use href="./img/icons/icons.svg#viber"></use>
+                    </svg></a>
+                <a href="#" class="whatsapp"><svg>
+                        <use href="./img/icons/icons.svg#whatsapp"></use>
+                    </svg></a>
+                <a href="#" class="vk"><svg>
+                        <use href="./img/icons/icons.svg#vk"></use>
+                    </svg></a>
+            </div>
+            <nav class="footer__nav">
+                <p>Навигация</p>
+                <ul>
+                    <li><a href="#">О клинике</a></li>
+                    <li><a href="#">Дисконтная система</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Вопросы и ответы</a></li>
+                    <li><a href="#">Врачи</a></li>
+                    <li><a href="#">Рассрочка</a></li>
+                    <li><a href="#">Работы врачей</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <nav class="footer__additionally">
+                <ul>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Договор-оферты</a></li>
+                </ul>
+                <div class="footer__copyright">2017—2023 Все права защищены.</div>
+            </nav>
+        </div>
+
+        <div class="footer__center">
+            <div>ООО СК «Добрые руки» ОГРН № 1178617000760<br>
+                Лицензия № Л0-86-01-002826 от 01.09.17
+            </div>
+            <a href="https://a1-reklama.ru" class="footer__dev">
+                <span>Разработка сайта</span>
+                <img src="./img/vitamin.svg" />
+            </a>
+        </div>
+        <div class="footer__bottom">ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ. НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА</div>
+
+    </div>
+</footer>
+<div class="btn-up btn-up_hide"></div>
+
+	</div>
+
+	<!-- Модалки -->
+	<div class="popup" id="feedback">
+    <div class="popup__container">
+        <div class="popup__content">
+            <form class="form" action="https://jsonplaceholder.typicode.com/posts" novalidate data-method="POST">
+                <div class="form__container form__container_waves form__main">
+                    <h2 class="form__title">ЗАПИШИТЕСЬ НА ПРИЁМ</h2>
+                    <p class="form__subtitle">Наш менеджер перезвонит в течении минуты и проконсультирует по всем
+                        вопросам</p>
+                    <div class="form__rows">
+                        <div class="form__row form__row_person">
+                            <input id="name1" type="text" class="form__input" minlength="3" name="name" required
+                                autocomplete="off">
+                            <label for="name1" class="form__placeholder">Как к вам обращаться?</label>
+                        </div>
+                        <div class="form__row form__row_phone">
+                            <input id="phone1" type="text" class="form__input tel" name="phone" minlength="18" required
+                                autocomplete="off">
+                            <label for="phone1" class="form__placeholder">+7 (___) ___-__-__</label>
+                        </div>
+                    </div>
+
+                    <button class="form__btn" type="submit">Оставить заявку</button>
+
+                    <div class="form__agree">
+                        <input type="checkbox" name="agree" id="feedback-agree" required autocomplete="off">
+                        <div class="form__checkbox"></div>
+                        <label for="feedback-agree">Отправляя форму Вы соглашаетесь с обработкой персональных данных
+                            и <a href="#" target="_blank">политикой конфиденциальности</a></label>
+                    </div>
+                    <p class="form__error">Произошла какая-то ошибка! Попробуйте еще раз! Если считаете, что это ошибка на стороне сервера, сообщите нам <a href="tel:+79959150094">+7 (995) 915-00-94</a> </p>
+                </div>
+                <div class="form__container form__container_waves form__success">
+                    <h2 class="form__title">ВАША ЗАЯВКА УСПЕШНО ОТПРАВЛЕНА</h2>
+                    <p class="form__subtitle">Ожидайте звонка в течении минуты. Менеджер свяжется с вами и оформит
+                        заявку
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div class="popup__close"></div>
+    </div>
+
+</div>
+
+	
+<script src="./js/app.js"></script>
+</body>
+
+</html>
