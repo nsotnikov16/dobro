@@ -68,37 +68,19 @@ const bannersSwiper = new Swiper('.banners__swiper', {
         nextEl: '.banners__swiper .swiper-button-next',
         prevEl: '.banners__swiper .swiper-button-prev',
     },
+    pagination: {
+        el: '.banners__swiper .swiper-pagination',
+        type: 'bullets',
+        clickable: true
+    },
     /* loop: true, */
     spaceBetween: 100,
     centeredSlides: true,
-    on: {
-        slideChange: function () {
-
-        }
-    },
-    allowTouchMove: false,
     initialSlide: 1,
     autoHeight: true
 })
 
-const banners = document.querySelectorAll('.banner')
-if (banners.length) {
-    banners.forEach((banner, index) => {
-        const blockForSwiper = banner.querySelector('.banner__swiper')
-        if (!blockForSwiper) return
-        new Swiper(blockForSwiper, {
-            slidesPerView: 1,
-            autoHeight: true,
-            loop: true,
-            pagination: {
-                el: blockForSwiper.querySelector('.swiper-pagination'),
-                type: 'bullets',
-                clickable: true
-            },
-            autoplay: index == 1 ? { delay: 3000, stopOnLastSlide: true } : false,
-        })
-    })
-}
+
 
 const swiperLicenses = new Swiper('.licenses__swiper', {
     // Default parameters
