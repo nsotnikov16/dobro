@@ -149,16 +149,19 @@ body {
 @import "services";
 
 /* Услуга */
-@import 'service';
+@import "service";
 
 /* Совет доктора */
-@import 'sovet';
+@import "sovet";
 
 /* Акции */
 @import "stocks";
 
+/* Вопрос-ответ */
+@import "faq";
+
 /* Формы */
-@import 'forms';
+@import "forms";
 
 /* Подвал */
 @import "footer";

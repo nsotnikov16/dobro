@@ -1,0 +1,73 @@
+@@include('html/head.html', {"title": "Часто задаваемые вопросы", "dop": ""})
+
+<body>
+    <div class="page page_inner">
+        <!-- Шапка -->
+        @@include('html/header.html', {})
+        @@include('html/breadcrumbs.html', {"current": "Вопросы и ответы", "prev": "<li><a href='#'>Пациентам</a></li>"})
+        <main>
+
+            <section class="section">
+                <div class="page__container">
+                    <h1 class="section__title">
+                        <center>Часто задаваемые вопросы</center>
+                    </h1>
+                    <div class="faq">
+                        <div class="faq__item spoiler">
+                            <div class="faq__item-question spoiler-top">
+                                Как можно оплатить?
+                            </div>
+                            <div class="faq__item-answer spoiler-bottom">
+                                <div class="content">
+                                    Оплату принимаем на сайте, на данный момент доступны следующие способы оплаты:<br>
+                                    - Банковские карты (Visa/Mastercard, МИР)<br>
+                                    - Рассрочка от Тинькофф<br>
+                                    <br>
+                                    После оплаты присылаем Вам чек на почту.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item spoiler">
+                            <div class="faq__item-question spoiler-top">
+                                А будет больно?
+                            </div>
+                            <div class="faq__item-answer spoiler-bottom">
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe asperiores quae amet
+                                    impedit eveniet at deleniti nemo quibusdam maxime odit tenetur ducimus ullam atque
+                                    reprehenderit harum non rem, eligendi ab.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item spoiler">
+                            <div class="faq__item-question spoiler-top">
+                                Как можно оплатить?
+                            </div>
+                            <div class="faq__item-answer spoiler-bottom">
+                                <div class="content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe asperiores quae amet
+                                    impedit eveniet at deleniti nemo quibusdam maxime odit tenetur ducimus ullam atque
+                                    reprehenderit harum non rem, eligendi ab.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Остались сомнения? -->
+            @@include('html/ask.html', {"color": "gray"})
+
+        </main>
+        <!-- Подвал -->
+        @@include('html/footer.html', {})
+
+    </div>
+
+    <!-- Модалки -->
+    @@include('html/popups.html', {})
+
+    @@include('html/scripts.html', {})
+</body>
+
+</html>
