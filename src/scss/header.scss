@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   &__top {
     .page__container {
       padding-top: 30px;
@@ -96,6 +97,7 @@
     .link-dropdown {
       position: relative;
       z-index: 300;
+
       > a {
         display: flex;
         align-items: center;
@@ -128,15 +130,17 @@
           position: absolute;
         }
       }
-      > div {
-        opacity: 0;
-        visibility: hidden;
-        transition-property: opacity, visibility;
-        transition: 0.2s ease-in-out;
-        position: absolute;
-        padding-top: 10px;
-        width: max-content;
-        left: -50%;
+      @media (min-width: 1024px) {
+        > div {
+          opacity: 0;
+          visibility: hidden;
+          transition-property: opacity, visibility;
+          transition: 0.2s ease-in-out;
+          position: absolute;
+          padding-top: 10px;
+          width: max-content;
+          left: -50%;
+        }
       }
 
       ul {
@@ -221,6 +225,296 @@
 
     .selected {
       color: $blue;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 5000vh;
+    background: rgba(4, 57, 78, 0.7);
+    z-index: -1;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease-out;
+    transition-property: opacity, visibility;
+  }
+
+  &.menu-open {
+    @media (max-width: 1023px) {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+        z-index: 99;
+      }
+    }
+
+    .burger {
+      span {
+        &:first-child {
+          transform: rotate(45deg) translateX(5px);
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+        &:last-child {
+          transform: rotate(-45deg) translateX(6px);
+        }
+      }
+    }
+
+    .header__mobile {
+      visibility: visible;
+      transform: translateY(-1px) translateX(0);
+    }
+  }
+
+  &__mobile-right {
+  }
+
+  &__mobile-phone {
+    svg {
+      flex-shrink: 0;
+      fill: #00adef;
+      width: 21px;
+      height: 21px;
+      display: block;
+    }
+  }
+
+  &__mobile {
+    @media (min-width: 1024px) {
+      display: none;
+    }
+    position: absolute;
+    z-index: 100;
+    background-color: $gray;
+    width: 100%;
+    border-radius: 0 0 16px 16px;
+    transform: translateY(-1px) translateX(-100%);
+    visibility: hidden;
+    transition: 0.2s ease-out;
+    transition-property: visibility, max-height, transform;
+
+    .header__social {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        margin-right: 40px;
+        width: 39px;
+        height: 39px;
+        svg {
+          width: 22px;
+          height: 22px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .header__block {
+      background-color: white;
+      padding: 15px 24px 3px;
+      p {
+        text-align: left;
+        margin-left: 8px;
+      }
+
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    .header__nav {
+      background-color: white;
+      border-radius: 16px 16px 0 0;
+      padding: 10px 0;
+      > ul {
+        flex-direction: column;
+        align-items: flex-start;
+        a {
+          width: 100%;
+          padding: 8px 24px;
+          display: flex;
+          justify-content: space-between;
+        }
+        > li {
+          margin-right: 0;
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: calc(100% - 48px);
+        height: 2px;
+        background-color: #0c4a62;
+        opacity: 0.1;
+        margin-top: 10px;
+      }
+
+      .link-stocks::after {
+        content: initial;
+      }
+
+      .link-dropdown.open {
+        div {
+          max-height: initial;
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        > a {
+          &::after {
+            transform: rotate(0);
+          }
+        }
+      }
+
+      .link-dropdown div {
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: 0.2s ease-out;
+        transition-property: max-height, transform, opacity;
+      }
+
+      .link-dropdown ul {
+        padding: 0;
+        overflow: hidden;
+      }
+      .link-dropdown li a {
+        max-width: 100%;
+        padding: 5px 36px;
+        &:hover {
+          background: #f0f4f8;
+          &::after {
+            content: initial;
+          }
+        }
+      }
+
+      .link-dropdown > a {
+        &::after {
+          background-image: url(../img/arrow-blue.svg);
+          transform: rotate(180deg);
+          transition: transform 0.2s ease-out;
+        }
+
+        &::before {
+          content: initial;
+        }
+      }
+
+      .link-reviews span {
+        display: none;
+      }
+    }
+
+    &-btn {
+      padding: 25px 24px;
+      background-color: white;
+
+      .btn {
+        margin-top: 0;
+        max-width: 100%;
+        min-width: 272px;
+        @media (max-width: 460px) {
+          width: 100%;
+        }
+      }
+    }
+
+    & > *:last-child {
+      border-radius: 0 0 16px 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__mobile-right {
+      display: none;
+    }
+  }
+  @media (max-width: 1150px) {
+    &__logo {
+      width: 20%;
+    }
+
+    &__block {
+      p {
+        font-size: 16px;
+      }
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    &__top {
+      .page__container {
+        & > *:not(.header__logo, .header__mobile-right) {
+          display: none;
+        }
+      }
+    }
+
+    &__bottom {
+      display: none;
+    }
+
+    &__logo {
+      width: 256px;
+    }
+
+    &__mobile-right {
+      display: flex;
+      align-items: center;
+    }
+
+    &__top {
+      border-radius: 0px 0px 16px 16px;
+      .page__container {
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__logo {
+      background-image: url(../img/logo-footer.svg);
+      width: 114px;
+      height: 36px;
+    }
+  }
+}
+
+.burger {
+  width: 26px;
+  flex-direction: column;
+  margin-left: 18px;
+
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: $black;
+    margin-bottom: 6px;
+    transform: rotate(0) translate(0);
+    transition: transform 0.3s ease-in;
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }

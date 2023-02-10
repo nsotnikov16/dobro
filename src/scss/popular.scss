@@ -1,7 +1,7 @@
 .popular {
     &__list {
         display: grid;
-        grid-template-columns: repeat(3, 370px);
+        grid-template-columns: repeat(auto-fit, 370px);
         gap: 15px 30px;
 
         &_service {

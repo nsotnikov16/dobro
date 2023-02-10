@@ -17,6 +17,35 @@ if (lazyImages.length > 0) {
     })
 }
 
+
+const header = document.querySelector('.header')
+const burger = header.querySelector('.burger')
+burger.addEventListener('click', () => header.classList.toggle('menu-open'))
+const headerMobile = header.querySelector('.header__mobile')
+const copyElements = ['.header__social', '.header__nav', '.header__block_address', '.header__block_phone', '.header .btn'].forEach(s => {
+    const el = header.querySelector(s)
+    if (!el) return
+    const clone = el.cloneNode(true)
+    headerMobile.append(clone)
+    if (s == '.header .btn') {
+        const newDiv = document.createElement('div')
+        newDiv.className = 'header__mobile-btn'
+        newDiv.append(clone)
+        headerMobile.append(newDiv)
+        clone.classList.add('banner__btn')
+        clone.insertAdjacentHTML('beforeend', `<svg>
+        <use href="./img/icons/icons.svg#arrow"></use>
+    </svg>`)
+    }
+})
+
+const dropdownLinksMobile = header.querySelectorAll('.header__mobile .link-dropdown > a')
+if (dropdownLinksMobile) dropdownLinksMobile.forEach(link => {
+    link.addEventListener('click', () => link.parentNode.classList.toggle('open'))
+})
+
+
+
 const swiperDoctors = new Swiper('.doctors .swiper', {
 
     // Default parameters
@@ -177,6 +206,7 @@ const anchors = [].slice.call(document.querySelectorAll('.scroll')),
 function scroll(item) {
     let element = document.querySelector(item.getAttribute('href'))
     if (!element) return
+    header.classList.remove('menu-open')
     // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
     let coordY = element.getBoundingClientRect().top + window.pageYOffset;
 
