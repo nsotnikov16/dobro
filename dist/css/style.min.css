@@ -1655,6 +1655,17 @@ main {
   font-size: 18px;
   line-height: 24px;
 }
+@media (max-width: 1230px) {
+  .banners__columns h3 {
+    font-size: calc(22px + 23.8 * (100vw - 768px) / 1230);
+    line-height: calc(26px + 20.4 * (100vw - 768px) / 1230);
+  }
+  .banners__columns p {
+    font-size: calc(12px + 10.2 * (100vw - 768px) / 1230);
+    line-height: calc(14px + 17 * (100vw - 768px) / 1230);
+    margin-top: calc(8px + 5.1 * (100vw - 768px) / 1230);
+  }
+}
 .banners .swiper-pagination {
   bottom: 30px;
   z-index: 20;
@@ -1673,20 +1684,37 @@ main {
   background: #00adef;
   border-radius: 10px;
 }
-@media (max-width: 1230px) {
-  .banners h3 {
-    font-size: calc(22px + 23.8 * (100vw - 768px) / 1230);
-    line-height: calc(26px + 20.4 * (100vw - 768px) / 1230);
+@media (max-width: 560px) {
+  .banners .swiper-pagination {
+    position: static;
+    margin-top: 12px;
   }
-  .banners p {
-    font-size: calc(12px + 10.2 * (100vw - 768px) / 1230);
-    line-height: calc(14px + 17 * (100vw - 768px) / 1230);
-    margin-top: calc(8px + 5.1 * (100vw - 768px) / 1230);
+  .banners .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+  .banners .swiper-pagination-bullet-active {
+    width: 22px;
+    height: 8px;
   }
 }
 @media (max-width: 900px) {
   .banners__columns {
     gap: 3%;
+  }
+}
+@media (max-width: 560px) {
+  .banners__columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .banners__columns h3 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  .banners__columns p {
+    font-size: 12px;
+    line-height: 14px;
   }
 }
 
@@ -1777,7 +1805,7 @@ main {
 }
 @media (max-width: 1230px) {
   .banner {
-    height: calc(350px + 357 * (100vw - 768px) / 1230);
+    height: calc(245px + 535.5 * (100vw - 560px) / 1230);
   }
   .banner__title {
     max-width: calc(330px + 122.4 * (100vw - 768px) / 1230);
@@ -1795,6 +1823,43 @@ main {
     min-height: calc(50px + 30.6 * (100vw - 768px) / 1230);
   }
 }
+@media (max-width: 560px) {
+  .banner {
+    height: 440px;
+    justify-content: end;
+    padding-bottom: 8px;
+    border-radius: 33px;
+    padding: 0 6% 5%;
+  }
+  .banner::before {
+    background: linear-gradient(0deg, #ffffff 42.92%, rgba(255, 255, 255, 0.93) 45.49%, rgba(255, 255, 255, 0) 83.18%);
+    width: 100%;
+  }
+  .banner__img {
+    object-position: top right;
+    object-fit: cover;
+    height: 59.3181818182%;
+  }
+  .banner__title {
+    font-size: 26px;
+    line-height: 28px;
+  }
+  .banner__subtitle {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 10px;
+    max-width: 100%;
+  }
+  .banner__btn {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .banner__btn svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
 /* Преимущества */
 .advantages {
   display: flex;

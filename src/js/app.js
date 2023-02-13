@@ -106,7 +106,16 @@ const bannersSwiper = new Swiper('.banners__swiper', {
     spaceBetween: 100,
     centeredSlides: true,
     initialSlide: 1,
-    autoHeight: true
+    autoHeight: true,
+
+    breakpoints: {
+        320: {
+            spaceBetween: 16
+        },
+        561: {
+            spaceBetween: 100
+        }
+    }
 })
 
 
