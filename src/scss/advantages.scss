@@ -7,14 +7,19 @@
     max-width: 1545px;
     overflow: hidden;
 
-    @media(min-width: 1921px) {
+    @media (min-width: 1921px) {
         border-radius: 60px;
     }
 
-    @media(max-width: 1220px) {
+    @media (max-width: 1220px) {
         border-radius: 60px;
         flex-direction: column-reverse;
-        
+    }
+
+    @media (max-width: 767px) {
+        padding: 30px 0;
+        background-color: initial;
+        overflow: initial;
     }
 
     .section__title {
@@ -22,12 +27,51 @@
         margin-bottom: 20px !important;
     }
 
+
+    .swiper-scrollbar {
+        position: static;
+        margin-top: 20px;
+
+        &-drag {
+            background-color: $blue;
+        }
+    }
+
+    @media(min-width: 768px) {
+        .swiper-scrollbar {
+            display: none;
+        }
+    }
+
+
+
     .swiper-slide {
         height: auto;
         img {
             height: 100%;
             width: 100%;
             object-fit: cover;
+        }
+
+        @media (max-width: 767px) {
+            img {
+                max-height: 75%;
+                border-radius: 16px 16px 0 0;
+            }
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+
+            .content {
+                padding: 0 20px 20px;
+            }
+            
+        }
+
+        @media (max-width: 560px) {
+            img {
+                max-height: 55%;
+            }
         }
     }
 
@@ -54,6 +98,11 @@
     &__swiper {
         border-radius: 0px 33px 33px 0px;
         max-width: 100%;
+
+        @media (max-width: 767px) {
+            border-radius: 0;
+            overflow: visible;
+        }
     }
 
     &__info {
@@ -61,9 +110,17 @@
         width: 37%;
         flex-shrink: 0;
 
-        @media(max-width: 1220px) {
+        @media (max-width: 1220px) {
             width: 100%;
             margin-bottom: 35px;
+        }
+
+        @media (max-width: 767px) {
+            margin-left: 0;
+            .content {
+                display: none;
+            }
+            margin-bottom: 0;
         }
     }
 }

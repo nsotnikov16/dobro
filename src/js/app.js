@@ -52,7 +52,7 @@ if (popularItemsHome.length && window.innerWidth <= 820) {
         top.classList.add('spoiler-top')
         bottom.classList.add('spoiler-bottom')
         item.classList.add('spoiler')
-        if(index == 0) item.classList.add('spoiler-open')
+        if (index == 0) item.classList.add('spoiler-open')
     })
 }
 
@@ -65,18 +65,11 @@ const swiperDoctors = new Swiper('.doctors .swiper', {
     breakpoints: {
         // when window width is >= 320px
         320: {
-            slidesPerView: 2,
-            spaceBetween: 20
+            spaceBetween: 15
         },
-        // when window width is >= 480px
-        480: {
-            slidesPerView: 3,
-            spaceBetween: 30
-        },
-        // when window width is >= 640px
-        640: {
-            slidesPerView: 3,
-            spaceBetween: 30
+
+        768: {
+
         }
     },
     scrollbar: {
@@ -99,6 +92,32 @@ const swiperAdvantages = new Swiper('.advantages__swiper', {
         type: 'bullets',
         clickable: true
     },
+   
+    breakpoints: {
+        320: {
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+            },
+            pagination: false,
+            spaceBetween: 15,
+            loop: false,
+            autoHeight: true
+            //autoHeight: true,
+        },
+        768: {
+            scrollbar: false,
+        }
+    },
+    on: {
+        init: function () {
+            const advantages = this.el.closest('.advantages')
+            if (!advantages) return
+            const contents = advantages.querySelectorAll('.advantages__info > .content')
+            const slides = this.el.querySelectorAll('.swiper-slide')
+            contents.forEach((c, i) => slides[i].append(c.cloneNode(true)))
+        }
+    }
 })
 
 const bannersSwiper = new Swiper('.banners__swiper', {

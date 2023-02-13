@@ -72,4 +72,16 @@
             line-height: 30px;
         }
     }
+
+    @media (max-width: 767px) {
+        h3 {
+            font-size: 18px;
+            line-height: 18px;
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 130%;
+        }
+    }
 }

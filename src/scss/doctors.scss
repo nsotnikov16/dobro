@@ -18,6 +18,10 @@
             background-color: $blue;
         }
     }
+
+    @media(max-width: 767px) {
+
+    }
 }
 
 .doctor {
@@ -31,6 +35,7 @@
         width: 100%;
         object-fit: contain;
         object-position: center bottom;
+        
     }
 
     &__info {
@@ -75,5 +80,11 @@
     &__btn {
         margin-top: 32px;
         width: 100%;
+    }
+
+    @media(max-width: 767px) {
+        &__photo {
+            height: 271px;
+        }
     }
 }
