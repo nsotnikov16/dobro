@@ -11,6 +11,12 @@
         border-radius: 60px;
     }
 
+    @media(max-width: 1220px) {
+        border-radius: 60px;
+        flex-direction: column-reverse;
+        
+    }
+
     .section__title {
         color: $blue;
         margin-bottom: 20px !important;
@@ -47,11 +53,17 @@
 
     &__swiper {
         border-radius: 0px 33px 33px 0px;
+        max-width: 100%;
     }
 
     &__info {
         margin-left: 54px;
         width: 37%;
         flex-shrink: 0;
+
+        @media(max-width: 1220px) {
+            width: 100%;
+            margin-bottom: 35px;
+        }
     }
 }

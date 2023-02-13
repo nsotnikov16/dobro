@@ -1,5 +1,9 @@
 .section {
   padding: 65px 0;
+
+  @media (max-width: 1024px) {
+    padding: 25px 0 45px;
+  }
   &__title {
     font-weight: 700;
     font-size: 42px;
@@ -8,6 +12,12 @@
     color: $black;
 
     margin-bottom: 40px;
+
+    @media (max-width: 767px) {
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 15px;
+    }
   }
 
   &__head {
@@ -22,6 +32,11 @@
     .section__title {
       margin-bottom: 0;
     }
+
+    @media (max-width: 767px) {
+    
+      margin-bottom: 15px;
+    }
   }
 
   &__subtitle {
@@ -35,11 +50,17 @@
   &_white {
     background-color: #ffffff;
     border-radius: 60px;
+    @media (max-width: 1024px) {
+      border-radius: 33px;
+    }
   }
 
   &_gray {
     background-color: $gray;
     border-radius: 60px;
+    @media (max-width: 1024px) {
+      border-radius: 33px;
+    }
   }
 }
 
@@ -165,6 +186,19 @@
     &:hover,
     &:active {
       border-color: $green;
+    }
+
+    @media (max-width: 767px) {
+      svg {
+        width: 13px;
+        height: 13px;
+        margin-left: 37px;
+      }
+
+      font-size: 12px;
+      line-height: 40px;
+      padding: 0 20px;
+      width: max-content;
     }
   }
 }

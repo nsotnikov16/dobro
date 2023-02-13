@@ -665,6 +665,11 @@ body::-webkit-scrollbar-track {
 .section {
   padding: 65px 0;
 }
+@media (max-width: 1024px) {
+  .section {
+    padding: 25px 0 45px;
+  }
+}
 .section__title {
   font-weight: 700;
   font-size: 42px;
@@ -672,6 +677,13 @@ body::-webkit-scrollbar-track {
   letter-spacing: -0.05em;
   color: #1e2326;
   margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .section__title {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 15px;
+  }
 }
 .section__head {
   display: flex;
@@ -685,6 +697,11 @@ body::-webkit-scrollbar-track {
 .section__head .section__title {
   margin-bottom: 0;
 }
+@media (max-width: 767px) {
+  .section__head {
+    margin-bottom: 15px;
+  }
+}
 .section__subtitle {
   max-width: 564px;
   font-weight: 500;
@@ -696,9 +713,19 @@ body::-webkit-scrollbar-track {
   background-color: #ffffff;
   border-radius: 60px;
 }
+@media (max-width: 1024px) {
+  .section_white {
+    border-radius: 33px;
+  }
+}
 .section_gray {
   background-color: #f0f4f8;
   border-radius: 60px;
+}
+@media (max-width: 1024px) {
+  .section_gray {
+    border-radius: 33px;
+  }
 }
 
 .logo {
@@ -818,6 +845,19 @@ body::-webkit-scrollbar-track {
 }
 .btn_all:hover, .btn_all:active {
   border-color: #67df73;
+}
+@media (max-width: 767px) {
+  .btn_all {
+    font-size: 12px;
+    line-height: 40px;
+    padding: 0 20px;
+    width: max-content;
+  }
+  .btn_all svg {
+    width: 13px;
+    height: 13px;
+    margin-left: 37px;
+  }
 }
 
 .btn-up {
@@ -1875,6 +1915,12 @@ main {
     border-radius: 60px;
   }
 }
+@media (max-width: 1220px) {
+  .advantages {
+    border-radius: 60px;
+    flex-direction: column-reverse;
+  }
+}
 .advantages .section__title {
   color: #00adef;
   margin-bottom: 20px !important;
@@ -1906,11 +1952,18 @@ main {
 }
 .advantages__swiper {
   border-radius: 0px 33px 33px 0px;
+  max-width: 100%;
 }
 .advantages__info {
   margin-left: 54px;
   width: 37%;
   flex-shrink: 0;
+}
+@media (max-width: 1220px) {
+  .advantages__info {
+    width: 100%;
+    margin-bottom: 35px;
+  }
 }
 
 /* Популярные услуги */
@@ -2036,6 +2089,34 @@ main {
 }
 .popular__all {
   margin-top: 30px;
+}
+@media (max-width: 820px) {
+  .popular__list {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .popular__item-top {
+    padding: 18px 0;
+  }
+  .popular__item-top a {
+    padding-left: 35px;
+    font-size: 20px;
+  }
+  .popular__item-top div {
+    min-width: 64px;
+    min-height: 64px;
+  }
+  .popular__item-bottom {
+    padding: 45px 16px 20px;
+  }
+  .popular__item-bottom li {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .popular__all {
+    margin-top: 15px;
+  }
 }
 
 /* Врачи */

@@ -44,7 +44,17 @@ if (dropdownLinksMobile) dropdownLinksMobile.forEach(link => {
     link.addEventListener('click', () => link.parentNode.classList.toggle('open'))
 })
 
-
+const popularItemsHome = document.querySelectorAll('.popular .popular__item')
+if (popularItemsHome.length && window.innerWidth <= 820) {
+    popularItemsHome.forEach((item, index) => {
+        const top = item.querySelector('.popular__item-top')
+        const bottom = item.querySelector('.popular__item-bottom')
+        top.classList.add('spoiler-top')
+        bottom.classList.add('spoiler-bottom')
+        item.classList.add('spoiler')
+        if(index == 0) item.classList.add('spoiler-open')
+    })
+}
 
 const swiperDoctors = new Swiper('.doctors .swiper', {
 
@@ -426,3 +436,4 @@ if (forms.length) {
         })
     })
 }
+
