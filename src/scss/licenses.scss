@@ -1,13 +1,26 @@
 .licenses {
   &__swiper {
-
     .swiper-scrollbar {
-        position: static;
-        margin-top: 55px;
-        cursor: pointer;
-        &-drag {
-            background: $blue;
-        }
+      position: static;
+      margin-top: 55px;
+      cursor: pointer;
+      &-drag {
+        background: $blue;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__swiper {
+      overflow: visible;
+      .swiper-scrollbar {
+        margin-top: 25px;
+      }
+
+      .swiper-slide {
+        max-width: 264px;
+        height: auto;
+      }
     }
   }
 }
@@ -17,12 +30,7 @@
   flex-direction: column;
   width: 370px;
   padding: 25px;
-  background: linear-gradient(
-      0deg,
-      rgba(240, 244, 248, 0.5),
-      rgba(240, 244, 248, 0.5)
-    ),
-    #ffffff;
+  background: linear-gradient(0deg, rgba(240, 244, 248, 0.5), rgba(240, 244, 248, 0.5)), #ffffff;
   border-radius: 33px;
   &__img {
     position: relative;
@@ -46,5 +54,36 @@
     font-size: 24px;
     line-height: 28px;
     color: $black;
+  }
+
+  @media (max-width: 1220px) {
+    width: 99%;
+    &__img {
+      img {
+        height: calc(327px + (133 + 133 * 0.7) * ((100vw - 1024px) / 1220));
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    border-radius: 23.5px;
+    justify-content: space-between;
+    height: 100%;
+    padding: 16px;
+    &__img {
+      img {
+        height: initial;
+      }
+    }
+
+    &__name {
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    &__download {
+      margin-top: 16px;
+    }
   }
 }

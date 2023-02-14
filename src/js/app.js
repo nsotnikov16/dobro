@@ -149,9 +149,17 @@ const bannersSwiper = new Swiper('.banners__swiper', {
 
 const swiperLicenses = new Swiper('.licenses__swiper', {
     // Default parameters
-    slidesPerView: 3,
-    spaceBetween: 30,
-
+  
+    breakpoints: {
+        320: {
+            spaceBetween: 15,
+            slidesPerView: 'auto'
+        }, 
+        1025: {    
+            spaceBetween: 30,
+            slidesPerView: 3,
+        }
+    },
     scrollbar: {
         el: '.licenses__swiper .swiper-scrollbar',
         draggable: true,
@@ -170,12 +178,19 @@ const swiperEducation = new Swiper('.education.swiper', {
 })
 
 
-function setSameHeight(selector, elementsNode) {
+function setSameHeight(selector, elementsNode, noRepeatListener) {
     let column = 0
     const elements = selector ? document.querySelectorAll(selector) : elementsNode
     if (!elements.length) return
     elements.forEach(el => el.offsetHeight > column ? column = el.offsetHeight : '')
     elements.forEach(el => el.style.height = column + 'px')
+
+    if(noRepeatListener) return
+
+    window.addEventListener('resize', () => {
+        elements.forEach(el => el.style.height = '')
+        setSameHeight(selector, elementsNode, true)
+    }, true)
 }
 
 const btnUp = {
@@ -214,10 +229,13 @@ btnUp.addEventListener();
 setSameHeight('.passage__info h3')
 
 const contacts = document.querySelector('.contacts')
-if(contacts && window.innerWidth <= 1024) {
+if (contacts && window.innerWidth <= 1024) {
     const title = contacts.querySelector('.section__title')
     contacts.parentNode.prepend(title.cloneNode(true))
 }
+
+const clinic = document.querySelector('.clinic')
+if (clinic && window.innerWidth <= 1024) setSameHeight('.clinic__right h3')
 
 const elementsWithArrow = document.querySelectorAll('.with-arrow')
 if (elementsWithArrow.length) {

@@ -3,13 +3,14 @@
     ul {
         display: flex;
         align-items: center;
+        overflow-x: auto;
     }
-
 
     li {
         margin-right: 15px;
         display: flex;
         align-items: center;
+        white-space: nowrap;
         &::after {
             content: "/";
             color: rgba(213, 231, 240, 1);
@@ -18,6 +19,7 @@
         }
         &:last-child {
             margin-right: 0;
+
             &::after {
                 content: initial;
             }
@@ -30,6 +32,10 @@
                 }
             }
         }
+
+        &:first-child {
+            white-space: initial;
+        }
     }
 
     a {
@@ -38,11 +44,10 @@
         line-height: 20px;
         transition: color 0.2s ease-out;
         &:hover {
-            color: $green
+            color: $green;
         }
     }
 
-    
     &__back {
         border: 1px solid #e7edf0;
         background-color: white;
@@ -68,12 +73,20 @@
             svg {
                 fill: white;
             }
-
         }
         &::after {
             transform: translateX(55px) !important;
         }
     }
 
-   
+    @media (max-width: 767px) {
+        ul {
+            padding-bottom: 10px;
+        }
+        &__back {
+            min-width: 46px;
+        }
+
+        padding: 15px 0 5px;
+    }
 }
