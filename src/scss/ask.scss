@@ -33,9 +33,10 @@
         z-index: 1;
         padding: 77px 76px 77px 139px;
         background-repeat: no-repeat;
+        background-size: 100% 100%;
         position: absolute;
         right: 0;
-        top: 18px;
+        top: 12px;
         width: 55.8%;
         * {
             color: white !important;
@@ -61,6 +62,81 @@
             width: 20px;
             height: 20px;
             margin-left: 35px;
+        }
+    }
+
+    @media (max-width: 1220px) {
+        &__right {
+            padding: 5% 6% 5% 11%;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        &__right {
+            position: static;
+            max-width: 100%;
+            width: 100%;
+            border-radius: 0 0 16px 16px;
+            padding: 8% 6% 5%;
+            transform: translateY(-20%);
+        }
+
+        &__left {
+            max-width: 100%;
+            padding: 5% 6%;
+            min-height: initial;
+            border-radius: 16px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        h2 {
+            font-size: 20px;
+            line-height: 105%;
+            margin-bottom: 7px;
+           
+        }
+
+        &__right {
+            h2 {
+                font-size: 16px;
+            }
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 130%;
+           
+            max-width: 85%;
+        }
+
+        &__btn {
+            font-size: 12px;
+            margin-top: 15px;
+            svg {
+                width: 14px;
+                height: 14px;
+                margin-left: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 560px) {
+        &__left {
+            padding: 25px 6%;
+        }
+        &__right {
+            padding: 14% 6% 6%;
+
+        }
+        h2, p {
+            padding-left: 5%;
+        }
+    }
+
+    @media(max-width: 360px) {
+        &__right {
+            padding: 18% 6% 8%;
         }
     }
 }

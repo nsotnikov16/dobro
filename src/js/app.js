@@ -57,19 +57,18 @@ if (popularItemsHome.length && window.innerWidth <= 820) {
 }
 
 const swiperDoctors = new Swiper('.doctors .swiper', {
-
-    // Default parameters
-    slidesPerView: 1,
-    spaceBetween: 10,
-    // Responsive breakpoints
+    spaceBetween: 30,
     breakpoints: {
-        // when window width is >= 320px
         320: {
-            spaceBetween: 15
+            spaceBetween: 15,
+            slidesPerView: 'auto',
         },
 
         768: {
-
+            slidesPerView: 2
+        },
+        1024: {
+            slidesPerView: 3
         }
     },
     scrollbar: {
@@ -92,7 +91,7 @@ const swiperAdvantages = new Swiper('.advantages__swiper', {
         type: 'bullets',
         clickable: true
     },
-   
+
     breakpoints: {
         320: {
             scrollbar: {
@@ -102,8 +101,7 @@ const swiperAdvantages = new Swiper('.advantages__swiper', {
             pagination: false,
             spaceBetween: 15,
             loop: false,
-            autoHeight: true
-            //autoHeight: true,
+
         },
         768: {
             scrollbar: false,
@@ -215,6 +213,11 @@ btnUp.addEventListener();
 
 setSameHeight('.passage__info h3')
 
+const contacts = document.querySelector('.contacts')
+if(contacts && window.innerWidth <= 1024) {
+    const title = contacts.querySelector('.section__title')
+    contacts.parentNode.prepend(title.cloneNode(true))
+}
 
 const elementsWithArrow = document.querySelectorAll('.with-arrow')
 if (elementsWithArrow.length) {
@@ -245,28 +248,16 @@ function scroll(item) {
     let element = document.querySelector(item.getAttribute('href'))
     if (!element) return
     header.classList.remove('menu-open')
-    // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
     let coordY = element.getBoundingClientRect().top + window.pageYOffset;
-
-    // запускаем интервал, в котором
     let scroller = setInterval(function () {
-        // считаем на сколько скроллить за 1 такт
         let scrollBy = coordY / framesCount;
-
-        // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
-        // и дно страницы не достигнуто
         if (scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
-
-            // то скроллим на к-во пикселей, которое соответствует одному такту
             window.scrollBy(0, scrollBy);
         } else {
-            // иначе добираемся до элемента и выходим из интервала
             window.scrollTo(0, coordY);
             clearInterval(scroller);
         }
-        // время интервала равняется частному от времени анимации и к-ва кадров
     }, animationTime / framesCount);
-
 }
 
 anchors.forEach(item => item.addEventListener('click', (e) => {

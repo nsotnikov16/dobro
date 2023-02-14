@@ -148,8 +148,15 @@
     }
 
     @media (max-width: 767px) {
+        padding-bottom: 20px;
+
+        &__item {
+            border-radius: 24px;
+        }
+
         &__item-top {
             padding: 18px 0;
+            border-radius: 24px;
             a {
                 padding-left: 35px;
                 font-size: 20px;

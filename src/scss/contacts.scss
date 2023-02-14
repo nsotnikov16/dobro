@@ -108,6 +108,7 @@
       height: 41px;
       background-size: contain;
       background-image: url(../img/chelovek.svg);
+      background-repeat: no-repeat;
       margin-bottom: 6px;
     }
 
@@ -130,5 +131,80 @@
 
   &__btn {
     margin-top: 26px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+    width: initial;
+    border-radius: 16px;
+    padding: 0 0 25px;
+    overflow: hidden;
+
+    .section__title {
+      display: none;
+    }
+
+    &__info {
+      max-width: initial;
+      width: 100%;
+      padding: 24px 30px 0;
+    }
+
+    &__btn {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
+    &__map {
+      border-radius: 0;
+      iframe {
+        height: 400px !important;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__map {
+      iframe {
+        height: 309px !important;
+      }
+    }
+
+    &__pass {
+      width: 103px;
+      height: 95px;
+      font-size: 12px;
+      line-height: 13px;
+      padding-left: 13px;
+      background-size: 100%;
+
+      svg {
+        width: 10px;
+        height: 10px;
+      }
+
+      &::before {
+        width: 22px;
+        height: 22px;
+      }
+
+      span {
+        max-width: 70px;
+      }
+    }
+
+    &__block {
+      margin-bottom: 16px;
+      h3 {
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 17px;
+      }
+    }
   }
 }

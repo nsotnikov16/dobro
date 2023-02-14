@@ -667,7 +667,7 @@ body::-webkit-scrollbar-track {
 }
 @media (max-width: 1024px) {
   .section {
-    padding: 25px 0 45px;
+    padding: 25px 0;
   }
 }
 .section__title {
@@ -844,6 +844,7 @@ body::-webkit-scrollbar-track {
   transition: border-color 0.2s ease-out;
   max-width: 330px;
   margin: 0 auto;
+  text-transform: uppercase;
 }
 .btn_all svg {
   width: 24px;
@@ -857,7 +858,7 @@ body::-webkit-scrollbar-track {
 }
 @media (max-width: 767px) {
   .btn_all {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 40px;
     padding: 0 20px;
     width: max-content;
@@ -2168,8 +2169,15 @@ main {
   }
 }
 @media (max-width: 767px) {
+  .popular {
+    padding-bottom: 20px;
+  }
+  .popular__item {
+    border-radius: 24px;
+  }
   .popular__item-top {
     padding: 18px 0;
+    border-radius: 24px;
   }
   .popular__item-top a {
     padding-left: 35px;
@@ -2206,6 +2214,18 @@ main {
 .doctors .swiper-scrollbar-drag {
   background-color: #00adef;
 }
+@media (max-width: 767px) {
+  .doctors .swiper {
+    overflow: visible;
+  }
+  .doctors .swiper-slide {
+    max-width: 264px;
+  }
+  .doctors .swiper-scrollbar {
+    margin-top: 25px;
+  }
+}
+
 .doctor {
   border-radius: 32px;
   overflow: hidden;
@@ -2225,8 +2245,18 @@ main {
   justify-content: space-between;
   height: calc(100% - 380px);
 }
+@media (max-width: 767px) {
+  .doctor__info {
+    padding: 15px 14px;
+  }
+}
 .doctor__info-top {
   padding-left: 20px;
+}
+@media (max-width: 767px) {
+  .doctor__info-top {
+    padding-left: 15px;
+  }
 }
 .doctor__experience {
   margin-bottom: 14px;
@@ -2240,6 +2270,13 @@ main {
   color: white;
   transform: translateX(-40px);
 }
+@media (max-width: 767px) {
+  .doctor__experience {
+    font-size: 12px;
+    line-height: 14px;
+    transform: translateX(-30px);
+  }
+}
 .doctor__name {
   font-weight: 700;
   font-size: 24px;
@@ -2248,9 +2285,21 @@ main {
   margin-bottom: 12px;
   display: block;
 }
+@media (max-width: 767px) {
+  .doctor__name {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
 .doctor__spec {
   font-size: 16px;
   line-height: 24px;
+}
+@media (max-width: 767px) {
+  .doctor__spec {
+    font-size: 12px;
+    line-height: 17px;
+  }
 }
 .doctor__btn {
   margin-top: 32px;
@@ -2296,9 +2345,10 @@ main {
   z-index: 1;
   padding: 77px 76px 77px 139px;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   position: absolute;
   right: 0;
-  top: 18px;
+  top: 12px;
   width: 55.8%;
 }
 .ask__right * {
@@ -2322,6 +2372,67 @@ main {
   width: 20px;
   height: 20px;
   margin-left: 35px;
+}
+@media (max-width: 1220px) {
+  .ask__right {
+    padding: 5% 6% 5% 11%;
+  }
+}
+@media (max-width: 1024px) {
+  .ask__right {
+    position: static;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0 0 16px 16px;
+    padding: 8% 6% 5%;
+    transform: translateY(-20%);
+  }
+  .ask__left {
+    max-width: 100%;
+    padding: 5% 6%;
+    min-height: initial;
+    border-radius: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .ask h2 {
+    font-size: 20px;
+    line-height: 105%;
+    margin-bottom: 7px;
+  }
+  .ask__right h2 {
+    font-size: 16px;
+  }
+  .ask p {
+    font-size: 12px;
+    line-height: 130%;
+    max-width: 85%;
+  }
+  .ask__btn {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  .ask__btn svg {
+    width: 14px;
+    height: 14px;
+    margin-left: 20px;
+  }
+}
+@media (max-width: 560px) {
+  .ask__left {
+    padding: 25px 6%;
+  }
+  .ask__right {
+    padding: 14% 6% 6%;
+  }
+  .ask h2, .ask p {
+    padding-left: 5%;
+  }
+}
+@media (max-width: 360px) {
+  .ask__right {
+    padding: 18% 6% 8%;
+  }
 }
 
 /* Контактная информация */
@@ -2431,6 +2542,7 @@ main {
   height: 41px;
   background-size: contain;
   background-image: url(../img/chelovek.svg);
+  background-repeat: no-repeat;
   margin-bottom: 6px;
 }
 .contacts__pass svg {
@@ -2446,6 +2558,69 @@ main {
 }
 .contacts__btn {
   margin-top: 26px;
+}
+@media (max-width: 1024px) {
+  .contacts {
+    flex-direction: column-reverse;
+    width: initial;
+    border-radius: 16px;
+    padding: 0 0 25px;
+    overflow: hidden;
+  }
+  .contacts .section__title {
+    display: none;
+  }
+  .contacts__info {
+    max-width: initial;
+    width: 100%;
+    padding: 24px 30px 0;
+  }
+  .contacts__btn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .contacts__map {
+    border-radius: 0;
+  }
+  .contacts__map iframe {
+    height: 400px !important;
+  }
+}
+@media (max-width: 767px) {
+  .contacts__map iframe {
+    height: 309px !important;
+  }
+  .contacts__pass {
+    width: 103px;
+    height: 95px;
+    font-size: 12px;
+    line-height: 13px;
+    padding-left: 13px;
+    background-size: 100%;
+  }
+  .contacts__pass svg {
+    width: 10px;
+    height: 10px;
+  }
+  .contacts__pass::before {
+    width: 22px;
+    height: 22px;
+  }
+  .contacts__pass span {
+    max-width: 70px;
+  }
+  .contacts__block {
+    margin-bottom: 16px;
+  }
+  .contacts__block h3 {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+  .contacts__block p {
+    font-size: 12px;
+    line-height: 17px;
+  }
 }
 
 /* О клинике */

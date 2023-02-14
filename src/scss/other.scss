@@ -2,7 +2,7 @@
   padding: 65px 0;
 
   @media (max-width: 1024px) {
-    padding: 25px 0 45px;
+    padding: 25px 0;
   }
   &__title {
     font-weight: 700;
@@ -181,6 +181,7 @@
     transition: border-color 0.2s ease-out;
     max-width: 330px;
     margin: 0 auto;
+    text-transform: uppercase;
     svg {
       width: 24px;
       height: 24px;
@@ -202,7 +203,7 @@
         margin-left: 37px;
       }
 
-      font-size: 12px;
+      font-size: 15px;
       line-height: 40px;
       padding: 0 20px;
       width: max-content;
