@@ -168,9 +168,20 @@ const swiperLicenses = new Swiper('.licenses__swiper', {
 
 
 const swiperEducation = new Swiper('.education.swiper', {
-    // Default parameters
-    slidesPerView: 3,
-    spaceBetween: 30,
+    breakpoints: {
+        320: {
+            slidesPerView: 'auto',
+            spaceBetween: 15,
+        }, 
+        651: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1025: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
     scrollbar: {
         el: '.education.swiper .swiper-scrollbar',
         draggable: true,

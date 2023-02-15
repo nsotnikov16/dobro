@@ -2962,6 +2962,56 @@ main {
   border-radius: 15px;
   transform: initial;
 }
+@media (min-width: 768px) and (max-width: 820px) {
+  .dentist__container {
+    padding-top: 45px;
+  }
+  .dentist__info {
+    margin-bottom: 45px;
+  }
+}
+@media (max-width: 767px) {
+  .dentist__photo {
+    width: 290px;
+  }
+}
+@media (max-width: 580px) {
+  .dentist {
+    max-width: calc(100vw - 48px);
+    margin-bottom: 25px;
+  }
+  .dentist__container {
+    flex-direction: column-reverse;
+    align-items: start;
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  .dentist__info {
+    max-width: 100%;
+    margin-top: 15px;
+  }
+  .dentist__photo {
+    align-self: center;
+    max-height: 270px;
+    object-fit: contain;
+  }
+  .dentist__experience {
+    border-radius: 0 15px 15px 0;
+    transform: translateX(-24px);
+  }
+  .dentist__title, .dentist__spec {
+    padding-left: 12px;
+  }
+  .dentist__title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .dentist__spec {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 17px;
+  }
+}
 
 /* Образование */
 .education .swiper-scrollbar {
@@ -2981,7 +3031,7 @@ main {
   overflow: hidden;
 }
 .education__item:hover {
-  background: #F1F8F0;
+  background: #f1f8f0;
 }
 .education__item-top {
   display: flex;
@@ -3012,9 +3062,7 @@ main {
   text-decoration: underline;
 }
 .education__photo {
-  /*  width: 50px; */
   height: 100px;
-  /* object-fit: contain; */
   position: absolute;
   top: 32px;
   right: 0;
@@ -3036,6 +3084,46 @@ main {
   font-size: 16px;
   line-height: 24px;
 }
+@media (max-width: 767px) {
+  .education {
+    overflow: visible;
+  }
+  .education .swiper-scrollbar {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 650px) {
+  .education .swiper-slide {
+    max-width: 264px;
+  }
+  .education__item {
+    padding: 17px;
+  }
+  .education__year {
+    font-size: 14px;
+    line-height: 17px;
+    padding: 4px 11px;
+    margin-right: 7px;
+  }
+  .education__show {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .education__item-bottom {
+    max-width: 193px;
+  }
+  .education__title {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .education__description {
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .education__photo {
+    top: 18px;
+  }
+}
 
 /* Работы врача */
 .works {
@@ -3045,6 +3133,19 @@ main {
 }
 .works__btn {
   margin-top: 40px;
+}
+@media (max-width: 820px) {
+  .works {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .works {
+    gap: 15px;
+  }
+  .works__btn {
+    margin-top: 15px;
+  }
 }
 
 .work {
@@ -3135,6 +3236,34 @@ main {
 .work .twentytwenty-handle .twentytwenty-right-arrow {
   margin-right: -20px;
   transform: scaleX(-1);
+}
+@media (max-width: 820px) {
+  .work__top img {
+    height: initial;
+  }
+  .work__bottom {
+    height: fit-content;
+  }
+}
+@media (max-width: 560px) {
+  .work {
+    background-color: #f0f4f8;
+  }
+  .work__bottom {
+    padding: 20px;
+  }
+  .work__bottom h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .work__bottom p {
+    font-size: 12px;
+    line-height: 130%;
+  }
+  .work .twentytwenty-wrapper {
+    overflow: hidden;
+    border-radius: 0 0 16px 16px;
+  }
 }
 
 /* Услуги */

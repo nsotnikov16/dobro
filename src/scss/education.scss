@@ -16,7 +16,7 @@
     position: relative;
     transition: background-color 0.2s ease-out;
     &:hover {
-      background: #F1F8F0;
+      background: #f1f8f0;
     }
 
     overflow: hidden;
@@ -54,9 +54,7 @@
   }
 
   &__photo {
-   /*  width: 50px; */
     height: 100px;
-    /* object-fit: contain; */
     position: absolute;
     top: 32px;
     right: 0;
@@ -80,5 +78,52 @@
   &__description {
     font-size: 16px;
     line-height: 24px;
+  }
+
+  @media (max-width: 767px) {
+    overflow: visible;
+    .swiper-scrollbar {
+      margin-top: 25px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .swiper-slide {
+      max-width: 264px;
+    }
+
+    &__item {
+      padding: 17px;
+    }
+
+    &__year {
+      font-size: 14px;
+      line-height: 17px;
+      padding: 4px 11px;
+      margin-right: 7px;
+    }
+
+    &__show {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    &__item-bottom {
+      max-width: 193px;
+    }
+
+    &__title {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    &__description {
+      font-size: 12px;
+      line-height: 17px;
+    }
+
+    &__photo {
+      top: 18px;
+    }
   }
 }
