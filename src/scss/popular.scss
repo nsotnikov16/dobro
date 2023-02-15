@@ -73,6 +73,7 @@
             background: $linear-green;
             opacity: 0;
             left: 0;
+            top: 0;
             width: 101%;
             height: 101%;
         }
@@ -144,6 +145,14 @@
     @media (max-width: 820px) {
         &__list {
             grid-template-columns: 1fr;
+        }
+
+        &__item {
+            &-top {
+                a.with-arrow {
+                    padding-left: 8%;
+                }
+            }
         }
     }
 

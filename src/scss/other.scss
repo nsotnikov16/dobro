@@ -178,7 +178,7 @@
     background: white;
     color: $black;
     font-size: 20px;
-    line-height: 65px;
+    line-height: 25px;
     justify-content: space-between;
     padding: 0 35px;
     transition: border-color 0.2s ease-out;
@@ -223,6 +223,7 @@
   cursor: pointer;
   width: 44px;
   height: 44px;
+  z-index: 20;
   transition: background-color 0.3s ease-out;
 }
 

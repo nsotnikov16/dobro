@@ -172,7 +172,7 @@ const swiperEducation = new Swiper('.education.swiper', {
         320: {
             slidesPerView: 'auto',
             spaceBetween: 15,
-        }, 
+        },
         651: {
             slidesPerView: 2,
             spaceBetween: 20,
@@ -257,12 +257,12 @@ if (passage) {
     const steps = passage.querySelectorAll('.passage__step')
     const passageSwiperWrapperBlock = document.querySelector('.passage-swiper .swiper-wrapper')
     if (steps) {
-        steps.forEach(step => { 
+        steps.forEach(step => {
             const slide = document.createElement('div')
             slide.classList.add('swiper-slide')
             slide.append(step.cloneNode(true))
             passageSwiperWrapperBlock.append(slide)
-         })
+        })
         const passageSwiper = new Swiper('.passage-swiper', {
             spaceBetween: 15,
             slidesPerView: 'auto',
@@ -271,7 +271,7 @@ if (passage) {
                 draggable: true,
             },
             on: {
-                init: function() {
+                init: function () {
                     this.el.querySelectorAll('.passage__info h3').forEach(h3 => h3.style.height = '')
                 }
             }
@@ -292,7 +292,11 @@ if (elementsWithArrow.length) {
 // Aside Service
 const asideServiceList = document.querySelector('.service__aside .popular__list_service')
 if (asideServiceList) {
-
+    const ask = document.querySelector('.ask')
+    if (ask) {
+        ask.closest('section').insertAdjacentHTML('beforebegin', `<section class="section" id="for-aside"><div class="page__container" ></div></section>`)
+        document.querySelector('#for-aside .page__container').append(asideServiceList.cloneNode(true))
+    }
 }
 
 /* Спойлеры */

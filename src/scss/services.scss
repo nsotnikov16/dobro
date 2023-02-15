@@ -58,10 +58,100 @@
             }
         }
     }
-}
 
-.services .services__list {
-    width: 65.8%;
+    .services__list {
+        width: 65.8%;
+    }
+
+    @media (max-width: 1180px) {
+        flex-direction: column;
+        &__left {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .services__list {
+            width: 100%;
+            margin-top: 35px;
+        }
+
+        &__list {
+            li {
+                a {
+                    width: initial;
+                    text-decoration: underline;
+                    text-decoration-color: $blue;
+                    text-underline-offset: 5px;
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 819px) {
+        &__list {
+            li {
+                grid-template-columns: 1fr 30%;
+            }
+        }
+
+        .popular__item_services {
+            margin-bottom: 0;
+            .popular__item-top {
+                flex-direction: column;
+                height: 100%;
+                border-radius: 16px;
+                a {
+                    padding: 0 12px;
+                    text-align: center;
+                    letter-spacing: -0.05em;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 560px) {
+        &__left {
+            gap: 8px;
+        }
+
+        &__list {
+            li {
+                font-size: 13px;
+                line-height: 130%;
+                padding: 14px 12px;
+            }
+        }
+
+        .popular__item_services {
+            .popular__item-top {
+                align-items: flex-start;
+                padding: 16px 0;
+                > div {
+                    min-width: 55px;
+                    min-height: 55px;
+                    align-self: end;
+                    transform: translateY(8px);
+                }
+
+                a {
+                    text-align: left;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .price {
+            align-self: center;
+        }
+
+        .services__list {
+            width: calc(100% + 24px);
+            transform: translateX(-12px);
+        }
+    }
 }
 
 .price {
@@ -70,4 +160,9 @@
     line-height: 24px;
     color: $blue;
     font-family: "Roboto";
+
+    @media(max-width: 560px) {
+        font-size: 14px;
+        line-height: 16px;
+    }
 }

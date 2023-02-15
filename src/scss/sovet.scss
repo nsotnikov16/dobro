@@ -16,13 +16,13 @@
         & > a {
             position: relative;
             &::after {
-                content: '';
+                content: "";
                 position: absolute;
                 bottom: 0;
                 width: 100%;
                 height: 130px;
                 display: block;
-                background: linear-gradient(180deg, rgba(248, 250, 252, 0) 70.05%, #F8FAFC 94.87%);
+                background: linear-gradient(180deg, rgba(248, 250, 252, 0) 70.05%, #f8fafc 94.87%);
             }
         }
         &__experience {
@@ -33,6 +33,89 @@
         }
         &__info-top {
             padding-left: 0;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .doctor {
+            width: 36%;
+            align-self: flex-end;
+        }
+    }
+
+    @media (max-width: 900px) {
+        flex-direction: column-reverse;
+        border-left: none;
+        padding: 30px;
+        width: calc(100% + 60px);
+        transform: translateX(-30px);
+        .doctor {
+            overflow: initial;
+            width: 100%;
+            display: flex;
+            position: relative;
+
+            align-self: initial;
+
+            > a {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                height: 100%;
+            }
+
+            &__photo {
+                transform: scaleX(-1);
+                height: 100%;
+            }
+
+            &__info {
+                height: initial;
+                padding-left: 0;
+            }
+
+            &__btn {
+                min-height: 45px;
+                margin-left: 0;
+            }
+
+            &__experience {
+                transform: translateX(-10px);
+                border-radius: 15px;
+            }
+        }
+    }
+
+    @media (max-width: 560px) {
+        padding: 15px 30px;
+        margin-top: 25px;
+
+        .doctor {
+            > a {
+                right: -15px;
+                &::after {
+                    bottom: initial;
+                    top: 8px;
+                }
+            }
+            &__info {
+                width: 100%;
+                padding-top: 10px;
+            }
+
+            &__btn {
+                max-width: 100%;
+                margin-top: 22px;
+            }
+
+            &__photo {
+                height: 131px;
+            }
+
+            &__name,
+            &__spec {
+                max-width: 206px;
+            }
         }
     }
 }
