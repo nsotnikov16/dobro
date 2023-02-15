@@ -149,13 +149,13 @@ const bannersSwiper = new Swiper('.banners__swiper', {
 
 const swiperLicenses = new Swiper('.licenses__swiper', {
     // Default parameters
-  
+
     breakpoints: {
         320: {
             spaceBetween: 15,
             slidesPerView: 'auto'
-        }, 
-        1025: {    
+        },
+        1025: {
             spaceBetween: 30,
             slidesPerView: 3,
         }
@@ -185,7 +185,7 @@ function setSameHeight(selector, elementsNode, noRepeatListener) {
     elements.forEach(el => el.offsetHeight > column ? column = el.offsetHeight : '')
     elements.forEach(el => el.style.height = column + 'px')
 
-    if(noRepeatListener) return
+    if (noRepeatListener) return
 
     window.addEventListener('resize', () => {
         elements.forEach(el => el.style.height = '')
@@ -228,11 +228,47 @@ btnUp.addEventListener();
 
 setSameHeight('.passage__info h3')
 
-const contacts = document.querySelector('.contacts')
+const contacts = document.querySelector('.contacts:not(.contacts_reverse)')
 if (contacts && window.innerWidth <= 1024) {
     const title = contacts.querySelector('.section__title')
     contacts.parentNode.prepend(title.cloneNode(true))
 }
+
+const passage = document.querySelector('.passage')
+if (passage) {
+    passage.insertAdjacentHTML('afterend', `
+    <div class="swiper passage-swiper">
+        <div class="swiper-wrapper"></div>
+         <div class="swiper-scrollbar"></div> 
+    </div>
+    `)
+
+    const steps = passage.querySelectorAll('.passage__step')
+    const passageSwiperWrapperBlock = document.querySelector('.passage-swiper .swiper-wrapper')
+    if (steps) {
+        steps.forEach(step => { 
+            const slide = document.createElement('div')
+            slide.classList.add('swiper-slide')
+            slide.append(step.cloneNode(true))
+            passageSwiperWrapperBlock.append(slide)
+         })
+        const passageSwiper = new Swiper('.passage-swiper', {
+            spaceBetween: 15,
+            slidesPerView: 'auto',
+            scrollbar: {
+                el: '.passage-swiper .swiper-scrollbar',
+                draggable: true,
+            },
+            on: {
+                init: function() {
+                    this.el.querySelectorAll('.passage__info h3').forEach(h3 => h3.style.height = '')
+                }
+            }
+        })
+    }
+}
+
+
 
 const clinic = document.querySelector('.clinic')
 if (clinic && window.innerWidth <= 1024) setSameHeight('.clinic__right h3')

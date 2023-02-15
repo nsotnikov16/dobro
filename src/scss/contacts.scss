@@ -16,20 +16,37 @@
     width: 100%;
     max-width: initial;
     .contacts__pass {
-      display: none;
+      @media(min-width: 768px) {
+        display: none;
+      }
+     
     }
     .contacts__info {
-      padding: 0 0 0 30px;
+
+      @media(min-width: 768px) {
+        padding: 0 0 0 30px;
+      }
+
+      @media(max-width: 767px) {
+        padding-bottom: 24px;
+        background-color: #F0F4F8;
+        border-radius: 0 0 16px 16px;
+      }  
+    
+     
       .btn_all {
         margin: 0;
       }
     }
 
     .contacts__map {
-      border-radius: 33px;
+      
 
-      iframe {
-        height: 580px !important;
+      @media(min-width: 768px) {
+        border-radius: 33px;
+        iframe {
+          height: 580px !important;
+        }
       }
     }
   }

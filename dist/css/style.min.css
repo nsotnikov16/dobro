@@ -2485,20 +2485,33 @@ main {
   width: 100%;
   max-width: initial;
 }
-.contacts_reverse .contacts__pass {
-  display: none;
+@media (min-width: 768px) {
+  .contacts_reverse .contacts__pass {
+    display: none;
+  }
 }
-.contacts_reverse .contacts__info {
-  padding: 0 0 0 30px;
+@media (min-width: 768px) {
+  .contacts_reverse .contacts__info {
+    padding: 0 0 0 30px;
+  }
+}
+@media (max-width: 767px) {
+  .contacts_reverse .contacts__info {
+    padding-bottom: 24px;
+    background-color: #F0F4F8;
+    border-radius: 0 0 16px 16px;
+  }
 }
 .contacts_reverse .contacts__info .btn_all {
   margin: 0;
 }
-.contacts_reverse .contacts__map {
-  border-radius: 33px;
-}
-.contacts_reverse .contacts__map iframe {
-  height: 580px !important;
+@media (min-width: 768px) {
+  .contacts_reverse .contacts__map {
+    border-radius: 33px;
+  }
+  .contacts_reverse .contacts__map iframe {
+    height: 580px !important;
+  }
 }
 .contacts_white {
   background-color: white;
@@ -2848,6 +2861,72 @@ main {
   line-height: 24px;
   padding-top: 12px;
   border-top: 1px solid rgba(127, 127, 127, 0.2);
+}
+@media (max-width: 1220px) {
+  .passage {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 768px) and (max-width: 1220px) {
+  .passage {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 30px;
+  }
+  .passage__step img {
+    border-radius: 16px !important;
+    height: 350px;
+  }
+  .passage__info {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .passage {
+    display: none;
+  }
+  .passage__step {
+    background: #f0f4f8;
+    overflow: hidden;
+    border-radius: 16px;
+    height: 100%;
+  }
+  .passage__step img {
+    border-radius: 16px 16px 0px 0px !important;
+    height: 210px;
+  }
+  .passage__info {
+    margin-top: 17px;
+    padding: 0 20px 23px;
+  }
+  .passage__info h3 {
+    font-size: 18px;
+    line-height: 18px;
+    max-width: 95%;
+  }
+  .passage__info h3 span {
+    font-size: 30px;
+    line-height: 32px;
+  }
+  .passage__info p {
+    font-size: 12px;
+    line-height: 130%;
+  }
+}
+@media (min-width: 768px) {
+  .passage-swiper {
+    display: none;
+  }
+}
+.passage-swiper .swiper-slide {
+  max-width: 264px;
+  height: auto;
+}
+.passage-swiper .swiper-scrollbar {
+  position: static;
+  margin-top: 25px;
+}
+.passage-swiper .swiper-scrollbar-drag {
+  background: #00adef;
 }
 
 /* Стоматолог */
