@@ -846,6 +846,7 @@ body::-webkit-scrollbar-track {
   padding: 0 35px;
   transition: border-color 0.2s ease-out;
   max-width: 330px;
+  min-height: 50px;
   margin: 0 auto;
   text-transform: uppercase;
 }
@@ -961,6 +962,22 @@ main {
   width: 100%;
   max-width: 390px;
 }
+@media (max-width: 767px) {
+  .page__404 img {
+    max-width: 80%;
+  }
+  .page__404 h1 {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 25px 0;
+    text-align: center;
+  }
+}
+@media (max-width: 560px) {
+  .page__404 img {
+    max-width: 100%;
+  }
+}
 
 [data-src],
 [data-srcset] {
@@ -985,8 +1002,9 @@ main {
 .content li {
   font-size: 18px;
 }
-.content_agreement ol {
+.content_agreement ol, .content_agreement ul {
   padding-left: 30px;
+  margin-top: 8px;
 }
 .content_agreement p,
 .content_agreement li {
@@ -1034,11 +1052,11 @@ main {
     line-height: 18px;
   }
   .content p {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 130%;
   }
   .content li {
-    font-size: 12px;
+    font-size: 13px;
   }
   .content_service br {
     display: none;
@@ -1049,6 +1067,13 @@ main {
   }
   .content_service img {
     border-radius: 16px;
+  }
+  .content_agreement p, .content_agreement li {
+    font-size: 14px;
+    line-height: 25px;
+  }
+  .content_agreement ol, .content_agreement ul {
+    padding-left: 20px;
   }
 }
 @media (max-width: 560px) {
@@ -3727,6 +3752,16 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 20px 30px;
 }
+@media (max-width: 820px) {
+  .stocks {
+    gap: 20px;
+  }
+}
+@media (max-width: 560px) {
+  .stocks {
+    grid-template-columns: 1fr;
+  }
+}
 
 .stock {
   position: relative;
@@ -3738,8 +3773,6 @@ main {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 .stock::before, .stock::after {
   content: "";
@@ -3764,19 +3797,29 @@ main {
 .stock:hover::after {
   opacity: 1;
 }
-.stock:hover .stock__time {
-  position: relative;
-  overflow: hidden;
-  z-index: 2;
-}
-.stock:hover .stock__time::after {
-  opacity: 1;
-  transition: opacity 0.2s ease-out;
-  z-index: -1;
+@media (min-width: 1025px) {
+  .stock:hover .stock__time {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .stock:hover .stock__time::after {
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+    z-index: -1;
+  }
 }
 .stock__info {
   max-width: 345px;
   z-index: 5;
+}
+.stock__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .stock__time {
   border-radius: 15px;
@@ -3833,6 +3876,85 @@ main {
   text-decoration-line: line-through;
   margin-left: 22px;
 }
+@media (max-width: 1024px) {
+  .stock {
+    padding: 0 0 34px;
+  }
+  .stock__info, .stock__prices {
+    padding: 0 37px;
+  }
+  .stock__img {
+    position: static;
+    height: 233px;
+  }
+  .stock__time {
+    position: absolute;
+    top: 25px;
+  }
+  .stock::before, .stock::after {
+    content: initial;
+  }
+  .stock__info::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc((100vw - 48px) / 2 - 10px);
+    height: 125%;
+    z-index: 1;
+    background: linear-gradient(0deg, #f0f4f8 13.7%, #f0f4f8 21.34%, rgba(240, 244, 248, 0.93) 67%, rgba(240, 244, 248, 0) 84.02%);
+  }
+  .stock__title, .stock__description {
+    position: relative;
+    z-index: 2;
+    transform: translateY(-10px);
+  }
+  .stock__prices {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 820px) {
+  .stock {
+    padding-bottom: 25px;
+  }
+  .stock__info, .stock__prices {
+    padding: 0 15px;
+  }
+  .stock__title {
+    font-size: 18px;
+    line-height: 130%;
+  }
+  .stock__description {
+    font-size: 14px;
+    line-height: 130%;
+  }
+  .stock__price {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .stock__price-old {
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: 20px;
+  }
+  .stock__prices {
+    margin-top: 5px;
+  }
+  .stock__info::after {
+    height: 150%;
+  }
+  .stock__time {
+    font-size: 12px;
+    line-height: 17px;
+    padding: 1px 10px;
+  }
+}
+@media (max-width: 560px) {
+  .stock__info::after {
+    width: 100%;
+  }
+}
 
 /* Вопрос-ответ */
 .faq {
@@ -3884,6 +4006,20 @@ main {
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
+}
+@media (max-width: 560px) {
+  .faq__item-question {
+    padding: 20px 5px 20px 0;
+    font-size: 18px;
+    line-height: 125%;
+  }
+  .faq .content {
+    font-size: 12px;
+    line-height: 180%;
+  }
+  .faq .spoiler-open .faq__item-answer {
+    padding-bottom: 20px;
+  }
 }
 
 /* Формы */

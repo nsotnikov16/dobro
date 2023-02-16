@@ -183,6 +183,7 @@
     padding: 0 35px;
     transition: border-color 0.2s ease-out;
     max-width: 330px;
+    min-height: 50px;
     margin: 0 auto;
     text-transform: uppercase;
     svg {
@@ -301,6 +302,25 @@ main {
   .btn_all {
     width: 100%;
     max-width: 390px;
+  }
+
+  @media (max-width: 767px) {
+    img {
+      max-width: 80%;
+    }
+
+    h1 {
+      font-size: 24px;
+      line-height: 28px;
+      margin: 25px 0;
+      text-align: center;
+    }
+  }
+
+  @media(max-width: 560px) {
+    img {
+      max-width: 100%;
+    }
   }
 }
 

@@ -60,4 +60,21 @@
         font-size: 18px;
         line-height: 30px;
     }
+
+    @media (max-width: 560px) {
+        &__item-question {
+            padding: 20px 5px 20px 0;
+            font-size: 18px;
+            line-height: 125%;
+        }
+
+        .content {
+            font-size: 12px;
+            line-height: 180%;
+        }
+
+        .spoiler-open .faq__item-answer {
+            padding-bottom: 20px;
+        }
+    }
 }

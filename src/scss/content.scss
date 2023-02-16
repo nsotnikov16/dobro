@@ -16,8 +16,9 @@
     }
 
     &_agreement {
-        ol {
+        ol, ul {
             padding-left: 30px;
+            margin-top: 8px;
         }
 
         p,
@@ -81,12 +82,12 @@
         }
 
         p {
-            font-size: 12px;
+            font-size: 13px;
             line-height: 130%;
         }
 
         li {
-            font-size: 12px;
+            font-size: 13px;
         }
 
         &_service {
@@ -101,6 +102,17 @@
 
             img {
                 border-radius: 16px;
+            }
+        }
+
+        &_agreement {
+            p, li {
+                font-size: 14px;
+                line-height: 25px;
+            }
+
+            ol, ul {
+                padding-left: 20px;
             }
         }
     }
@@ -121,5 +133,7 @@
                 margin-bottom: 15px;
             }
         }
+
+        
     }
 }
