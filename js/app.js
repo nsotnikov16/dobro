@@ -17,27 +17,58 @@ if (lazyImages.length > 0) {
     })
 }
 
-const swiperDoctors = new Swiper('.doctors .swiper', {
 
-    // Default parameters
-    slidesPerView: 1,
-    spaceBetween: 10,
-    // Responsive breakpoints
+const header = document.querySelector('.header')
+const burger = header.querySelector('.burger')
+burger.addEventListener('click', () => header.classList.toggle('menu-open'))
+const headerMobile = header.querySelector('.header__mobile')
+const copyElements = ['.header__social', '.header__nav', '.header__block_address', '.header__block_phone', '.header .btn'].forEach(s => {
+    const el = header.querySelector(s)
+    if (!el) return
+    const clone = el.cloneNode(true)
+    headerMobile.append(clone)
+    if (s == '.header .btn') {
+        const newDiv = document.createElement('div')
+        newDiv.className = 'header__mobile-btn'
+        newDiv.append(clone)
+        headerMobile.append(newDiv)
+        clone.classList.add('banner__btn')
+        clone.insertAdjacentHTML('beforeend', `<svg>
+        <use href="./img/icons/icons.svg#arrow"></use>
+    </svg>`)
+    }
+})
+
+const dropdownLinksMobile = header.querySelectorAll('.header__mobile .link-dropdown > a')
+if (dropdownLinksMobile) dropdownLinksMobile.forEach(link => {
+    link.addEventListener('click', () => link.parentNode.classList.toggle('open'))
+})
+
+const popularItemsHome = document.querySelectorAll('.popular .popular__item')
+if (popularItemsHome.length && window.innerWidth <= 820) {
+    popularItemsHome.forEach((item, index) => {
+        const top = item.querySelector('.popular__item-top')
+        const bottom = item.querySelector('.popular__item-bottom')
+        top.classList.add('spoiler-top')
+        bottom.classList.add('spoiler-bottom')
+        item.classList.add('spoiler')
+        if (index == 0) item.classList.add('spoiler-open')
+    })
+}
+
+const swiperDoctors = new Swiper('.doctors .swiper', {
+    spaceBetween: 30,
     breakpoints: {
-        // when window width is >= 320px
         320: {
-            slidesPerView: 2,
-            spaceBetween: 20
+            spaceBetween: 15,
+            slidesPerView: 'auto',
         },
-        // when window width is >= 480px
-        480: {
-            slidesPerView: 3,
-            spaceBetween: 30
+
+        768: {
+            slidesPerView: 2
         },
-        // when window width is >= 640px
-        640: {
-            slidesPerView: 3,
-            spaceBetween: 30
+        1024: {
+            slidesPerView: 3
         }
     },
     scrollbar: {
@@ -60,6 +91,31 @@ const swiperAdvantages = new Swiper('.advantages__swiper', {
         type: 'bullets',
         clickable: true
     },
+
+    breakpoints: {
+        320: {
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+            },
+            pagination: false,
+            spaceBetween: 15,
+            loop: false,
+
+        },
+        768: {
+            scrollbar: false,
+        }
+    },
+    on: {
+        init: function () {
+            const advantages = this.el.closest('.advantages')
+            if (!advantages) return
+            const contents = advantages.querySelectorAll('.advantages__info > .content')
+            const slides = this.el.querySelectorAll('.swiper-slide')
+            contents.forEach((c, i) => slides[i].append(c.cloneNode(true)))
+        }
+    }
 })
 
 const bannersSwiper = new Swiper('.banners__swiper', {
@@ -77,16 +133,33 @@ const bannersSwiper = new Swiper('.banners__swiper', {
     spaceBetween: 100,
     centeredSlides: true,
     initialSlide: 1,
-    autoHeight: true
+    autoHeight: true,
+
+    breakpoints: {
+        320: {
+            spaceBetween: 16
+        },
+        561: {
+            spaceBetween: 100
+        }
+    }
 })
 
 
 
 const swiperLicenses = new Swiper('.licenses__swiper', {
     // Default parameters
-    slidesPerView: 3,
-    spaceBetween: 30,
 
+    breakpoints: {
+        320: {
+            spaceBetween: 15,
+            slidesPerView: 'auto'
+        },
+        1025: {
+            spaceBetween: 30,
+            slidesPerView: 3,
+        }
+    },
     scrollbar: {
         el: '.licenses__swiper .swiper-scrollbar',
         draggable: true,
@@ -95,9 +168,20 @@ const swiperLicenses = new Swiper('.licenses__swiper', {
 
 
 const swiperEducation = new Swiper('.education.swiper', {
-    // Default parameters
-    slidesPerView: 3,
-    spaceBetween: 30,
+    breakpoints: {
+        320: {
+            slidesPerView: 'auto',
+            spaceBetween: 15,
+        },
+        651: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1025: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
     scrollbar: {
         el: '.education.swiper .swiper-scrollbar',
         draggable: true,
@@ -105,12 +189,19 @@ const swiperEducation = new Swiper('.education.swiper', {
 })
 
 
-function setSameHeight(selector, elementsNode) {
+function setSameHeight(selector, elementsNode, noRepeatListener) {
     let column = 0
     const elements = selector ? document.querySelectorAll(selector) : elementsNode
     if (!elements.length) return
     elements.forEach(el => el.offsetHeight > column ? column = el.offsetHeight : '')
     elements.forEach(el => el.style.height = column + 'px')
+
+    if (noRepeatListener) return
+
+    window.addEventListener('resize', () => {
+        elements.forEach(el => el.style.height = '')
+        setSameHeight(selector, elementsNode, true)
+    }, true)
 }
 
 const btnUp = {
@@ -148,6 +239,50 @@ btnUp.addEventListener();
 
 setSameHeight('.passage__info h3')
 
+const contacts = document.querySelector('.contacts:not(.contacts_reverse)')
+if (contacts && window.innerWidth <= 1024) {
+    const title = contacts.querySelector('.section__title')
+    contacts.parentNode.prepend(title.cloneNode(true))
+}
+
+const passage = document.querySelector('.passage')
+if (passage) {
+    passage.insertAdjacentHTML('afterend', `
+    <div class="swiper passage-swiper">
+        <div class="swiper-wrapper"></div>
+         <div class="swiper-scrollbar"></div> 
+    </div>
+    `)
+
+    const steps = passage.querySelectorAll('.passage__step')
+    const passageSwiperWrapperBlock = document.querySelector('.passage-swiper .swiper-wrapper')
+    if (steps) {
+        steps.forEach(step => {
+            const slide = document.createElement('div')
+            slide.classList.add('swiper-slide')
+            slide.append(step.cloneNode(true))
+            passageSwiperWrapperBlock.append(slide)
+        })
+        const passageSwiper = new Swiper('.passage-swiper', {
+            spaceBetween: 15,
+            slidesPerView: 'auto',
+            scrollbar: {
+                el: '.passage-swiper .swiper-scrollbar',
+                draggable: true,
+            },
+            on: {
+                init: function () {
+                    this.el.querySelectorAll('.passage__info h3').forEach(h3 => h3.style.height = '')
+                }
+            }
+        })
+    }
+}
+
+
+
+const clinic = document.querySelector('.clinic')
+if (clinic && window.innerWidth <= 1024) setSameHeight('.clinic__right h3')
 
 const elementsWithArrow = document.querySelectorAll('.with-arrow')
 if (elementsWithArrow.length) {
@@ -157,7 +292,11 @@ if (elementsWithArrow.length) {
 // Aside Service
 const asideServiceList = document.querySelector('.service__aside .popular__list_service')
 if (asideServiceList) {
-
+    const ask = document.querySelector('.ask')
+    if (ask) {
+        ask.closest('section').insertAdjacentHTML('beforebegin', `<section class="section" id="for-aside"><div class="page__container" ></div></section>`)
+        document.querySelector('#for-aside .page__container').append(asideServiceList.cloneNode(true))
+    }
 }
 
 /* Спойлеры */
@@ -177,28 +316,17 @@ const anchors = [].slice.call(document.querySelectorAll('.scroll')),
 function scroll(item) {
     let element = document.querySelector(item.getAttribute('href'))
     if (!element) return
-    // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
+    header.classList.remove('menu-open')
     let coordY = element.getBoundingClientRect().top + window.pageYOffset;
-
-    // запускаем интервал, в котором
     let scroller = setInterval(function () {
-        // считаем на сколько скроллить за 1 такт
         let scrollBy = coordY / framesCount;
-
-        // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
-        // и дно страницы не достигнуто
         if (scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
-
-            // то скроллим на к-во пикселей, которое соответствует одному такту
             window.scrollBy(0, scrollBy);
         } else {
-            // иначе добираемся до элемента и выходим из интервала
             window.scrollTo(0, coordY);
             clearInterval(scroller);
         }
-        // время интервала равняется частному от времени анимации и к-ва кадров
     }, animationTime / framesCount);
-
 }
 
 anchors.forEach(item => item.addEventListener('click', (e) => {
@@ -387,3 +515,4 @@ if (forms.length) {
         })
     })
 }
+

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
@@ -47,6 +47,14 @@
                     </svg></a>
             </div>
             <button class="btn" data-pointer="feedback">ЗАПИСАТЬСЯ НА ПРИЕМ</button>
+            <div class="header__mobile-right">
+                <a href="tel:+79959150094" class="header__mobile-phone">
+                    <svg>
+                        <use href="./img/icons/icons.svg#phone"></use>
+                    </svg>
+                </a>
+                <div class="burger"><span></span><span></span><span></span></div>
+            </div>
         </div>
     </div>
     <div class="header__bottom">
@@ -93,6 +101,10 @@
     </ul>
 </nav>
         </div>
+    </div>
+
+    <div class="header__mobile">
+        
     </div>
 </header>
         <div class="breadcrumbs">
@@ -176,7 +188,7 @@
         <li class="popular__item popular__item_active spoiler spoiler-open">
             <div class="popular__item-top spoiler-top">
                 <a href="javascript:void(0)" class="with-arrow">Имплантация</a>
-                <div data-srcset="./img/popular/2.png"></div>
+                <div data-srcset="./img/popular/2.svg"></div>
             </div>
             <ul class="popular__item-bottom spoiler-bottom">
                 <li><a href="#">Имплантаты</a></li>
@@ -189,7 +201,7 @@
         <li class="popular__item spoiler">
             <div class="popular__item-top spoiler-top">
                 <a href="javascript:void(0)" class="with-arrow">Ортодонтия</a>
-                <div data-srcset="./img/popular/1.png"></div>
+                <div data-srcset="./img/popular/1.svg"></div>
             </div>
             <ul class="popular__item-bottom spoiler-bottom">
                 <li><a href="#">Трейнеры для коррекции прикуса</a></li>
@@ -204,7 +216,7 @@
             <div class="popular__item-top  spoiler-top">
                 <a href="javascript:void(0)" class="with-arrow">Эстетическая
                     стоматология</a>
-                <div data-srcset="./img/popular/3.png"></div>
+                <div data-srcset="./img/popular/3.svg"></div>
             </div>
             <ul class=" popular__item-bottom spoiler-bottom">
                 <li><a href="#">Профессиональная гигиена полости рта</a></li>
@@ -215,7 +227,7 @@
         <li class="popular__item spoiler">
             <div class="popular__item-top spoiler-top">
                 <a href="javascript:void(0)" class="with-arrow">Терапия</a>
-                <div data-srcset="./img/popular/4.png"></div>
+                <div data-srcset="./img/popular/4.svg"></div>
             </div>
             <ul class="popular__item-bottom spoiler-bottom">
                 <li><a href="#">Лечение не кариозных поражений тканей зуба</a></li>
@@ -227,7 +239,7 @@
         <li class="popular__item spoiler">
             <div class="popular__item-top spoiler-top">
                 <a href="javascript:void(0)" class="with-arrow">Хирургия</a>
-                <div data-srcset="./img/popular/5.png"></div>
+                <div data-srcset="./img/popular/5.svg"></div>
             </div>
             <ul class="popular__item-bottom spoiler-bottom">
                 <li><a href="#">Удаление зуба</a></li>
@@ -241,7 +253,7 @@
         <li class="popular__item spoiler">
             <div class="popular__item-top spoiler-top">
                 <a href="javascript:void(0)" class="with-arrow">Ортопедия</a>
-                <div data-srcset="./img/popular/6.png"></div>
+                <div data-srcset="./img/popular/6.svg"></div>
             </div>
             <ul class="popular__item-bottom spoiler-bottom">
                 <li><a href="#">Съёмное протезирование</a></li>
@@ -393,6 +405,7 @@
                     <li><a href="#">Отзывы</a></li>
                     <li><a href="#">Контакты</a></li>
                 </ul>
+                <div class="footer__copyright footer__copyright_mobile">2017—2023 Все права защищены.</div>
             </nav>
             <nav class="footer__additionally">
                 <ul>

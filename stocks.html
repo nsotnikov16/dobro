@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
@@ -47,6 +47,14 @@
                     </svg></a>
             </div>
             <button class="btn" data-pointer="feedback">ЗАПИСАТЬСЯ НА ПРИЕМ</button>
+            <div class="header__mobile-right">
+                <a href="tel:+79959150094" class="header__mobile-phone">
+                    <svg>
+                        <use href="./img/icons/icons.svg#phone"></use>
+                    </svg>
+                </a>
+                <div class="burger"><span></span><span></span><span></span></div>
+            </div>
         </div>
     </div>
     <div class="header__bottom">
@@ -94,6 +102,10 @@
 </nav>
         </div>
     </div>
+
+    <div class="header__mobile">
+        
+    </div>
 </header>
         <div class="breadcrumbs">
     <div class="page__container">
@@ -112,7 +124,8 @@
     <div class="page__container">
         <h1 class="section__title">Акции</h1>
         <ul class="stocks">
-            <li class="stock" data-srcset="./img/banners/1.png">
+            <li class="stock">
+                <img class="stock__img" data-src="./img/banners/1.png">
                 <div class="stock__info">
                     <div class="stock__time">до 31.12.2022</div>
                     <h3 class="stock__title">Стоматологический чек-ап за просто так</h3>
@@ -125,7 +138,8 @@
                     <div class="stock__price-old">1 500 <span>₽</span></div>
                 </div>
             </li>
-            <li class="stock" data-srcset="https://img.freepik.com/free-photo/woman-patient-at-dentist_1303-9364.jpg">
+            <li class="stock">
+                <img class="stock__img" data-src="https://img.freepik.com/free-photo/woman-patient-at-dentist_1303-9364.jpg">
                 <div class="stock__info">
                     <div class="stock__time">до 31.12.2022</div>
                     <h3 class="stock__title">Стоматологический чек-ап за просто так</h3>
@@ -138,7 +152,8 @@
                     <div class="stock__price-old">1 500 <span>₽</span></div>
                 </div>
             </li>
-            <li class="stock" data-srcset="https://img.freepik.com/free-photo/woman-patient-at-dentist_1303-9364.jpg">
+            <li class="stock" >
+                <img class="stock__img" data-src="https://img.freepik.com/free-photo/woman-patient-at-dentist_1303-9364.jpg">
                 <div class="stock__info">
                     <div class="stock__time">до 31.12.2022</div>
                     <h3 class="stock__title">Стоматологический чек-ап за просто так</h3>
@@ -151,7 +166,8 @@
                     <div class="stock__price-old">1 500 <span>₽</span></div>
                 </div>
             </li>
-            <li class="stock" data-srcset="./img/banners/1.png">
+            <li class="stock">
+                <img class="stock__img" data-src="./img/banners/1.png">
                 <div class="stock__info">
                     <div class="stock__time">до 31.12.2022</div>
                     <h3 class="stock__title">Стоматологический чек-ап за просто так</h3>
@@ -219,6 +235,7 @@
                     <li><a href="#">Отзывы</a></li>
                     <li><a href="#">Контакты</a></li>
                 </ul>
+                <div class="footer__copyright footer__copyright_mobile">2017—2023 Все права защищены.</div>
             </nav>
             <nav class="footer__additionally">
                 <ul>
@@ -243,6 +260,7 @@
     </div>
 </footer>
 <div class="btn-up btn-up_hide"></div>
+
 
     </div>
 
