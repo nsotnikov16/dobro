@@ -41,3 +41,5 @@ https://nsotnikov16.github.io/dobro/agreement.html
 ### 404
 https://nsotnikov16.github.io/dobro/404.html
 
+### Часто задаваемые вопросы
+https://nsotnikov16.github.io/dobro/faq.html

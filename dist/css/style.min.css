@@ -1136,6 +1136,12 @@ main {
 .popup__close:hover {
   filter: brightness(0.1);
 }
+@media (max-width: 560px) {
+  .popup__close {
+    width: 20px;
+    height: 20px;
+  }
+}
 .popup__img {
   max-width: 50vw;
   max-height: 70vh;
@@ -4210,6 +4216,59 @@ main {
   letter-spacing: 0.01em;
   color: #1e2326;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  .form {
+    max-width: 95vw;
+    max-height: 75vh;
+  }
+  .form__container {
+    padding: 25px 30px;
+  }
+  .form__container_waves .form__title {
+    margin-top: 25px;
+  }
+  .form__title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .form__subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+  }
+  .form__input {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 13px 12px;
+  }
+  .form__placeholder {
+    font-size: 12px;
+    line-height: 14px;
+    top: 13px;
+    left: 12px;
+  }
+  .form__row {
+    margin-bottom: 5px;
+  }
+  .form__row::after {
+    top: 13px;
+    right: 12px;
+  }
+  .form__btn {
+    margin: 10px auto 0;
+    padding: 7px;
+    max-width: 236px;
+    border-radius: 69px;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .form__agree {
+    margin-top: 20px;
+    max-width: 400px;
+  }
 }
 
 /* Подвал */
