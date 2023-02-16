@@ -43,3 +43,5 @@ https://nsotnikov16.github.io/dobro/404.html
 
 ### Часто задаваемые вопросы
 https://nsotnikov16.github.io/dobro/faq.html
+
+## Проверка формы записи на приём работает только в шапке сайта (или в меню бургере на мобилке)
