@@ -54,7 +54,7 @@
             width: 100%;
             display: flex;
             position: relative;
-
+            margin-right: 0;
             align-self: initial;
 
             > a {
@@ -62,11 +62,16 @@
                 right: 0;
                 bottom: 0;
                 height: 100%;
+                display: block;
+                width: max-content;
             }
 
             &__photo {
                 transform: scaleX(-1);
                 height: 100%;
+                display: block;
+                object-position: right;
+                max-width: 200px;
             }
 
             &__info {
