@@ -350,8 +350,9 @@ class Popup {
         document.body.style.overflow = "hidden";
         this.popupElement.classList.add('popup_opened')
         document.addEventListener('keydown', this._handleEscClose);
-        if (this._img && el.src) this._img.src = el.src
-
+        const src = el.getAttribute('data-src-photo')
+        console.log(el)
+        if (this._img && src) this._img.src = src
     }
 
     close() {
@@ -380,7 +381,7 @@ class Popup {
     }
 
     setEventListeners() {
-        this._openingLinks.forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); this.open(e.target) }))
+        this._openingLinks.forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); this.open(e.currentTarget) }))
         this._closeButton.addEventListener('click', () => this.close());
         this.popupElement.addEventListener('click', this._handleOverlayClick.bind(this));
     }
