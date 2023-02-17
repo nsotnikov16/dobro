@@ -3713,6 +3713,7 @@ main {
     bottom: 0;
     height: 100%;
     display: block;
+    width: max-content;
   }
   .sovet .doctor__photo {
     transform: scaleX(-1);
