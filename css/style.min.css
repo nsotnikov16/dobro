@@ -1148,6 +1148,8 @@ main {
   object-fit: contain;
   object-position: top center;
   border-radius: 5px;
+  padding: 10px;
+  background: white;
 }
 @media (max-width: 1180px) {
   .popup__img {
@@ -1158,6 +1160,9 @@ main {
   .popup__img {
     max-width: 85vw;
   }
+}
+.popup#photo .popup__close {
+  filter: brightness(0.1);
 }
 
 /* Спойлеры */
