@@ -3719,6 +3719,8 @@ main {
     transform: scaleX(-1);
     height: 100%;
     display: block;
+    object-position: right;
+    max-width: 200px;
   }
   .sovet .doctor__info {
     height: initial;
